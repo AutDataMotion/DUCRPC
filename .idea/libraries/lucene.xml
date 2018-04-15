@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lucene">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../MyLifeCMS/doc/lucene/修改后的源码.zip!/" />
+      <root url="jar://$PROJECT_DIR$/../MyLifeCMS/doc/lucene/IK Analyzer 2012FF_hf1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

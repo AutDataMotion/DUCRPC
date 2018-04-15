@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jfinal20">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../MyLifeCMS/build-lib/jfinal20/freemarker-2.3.22.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../MyLifeCMS/build-lib/jfinal20/velocity-1.7-dep.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../MyLifeCMS/build-lib/jfinal20/velocity-1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../MyLifeCMS/build-lib/jfinal20/c3p0-0.9.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

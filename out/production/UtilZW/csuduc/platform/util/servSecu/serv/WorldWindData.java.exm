@@ -1,0 +1,83 @@
+/**
+ * <p>title:WorldWindData.java<／p>
+ * <p>Description: <／p>
+ * @date:2015年11月9日下午11:18:53
+ * @author：ZhongwengHao email:zhongweng.hao@qq.com
+ * @version 1.0
+ */
+package csuduc.platform.util.servSecu.serv;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import csuduc.platform.util.JsonUtils;
+import csuduc.platform.util.StringUtil;
+import csuduc.platform.util.networkCom.HttpClientUtil;
+import duc.platform.serviceSecu.core.ServSecuMdlRespServer;
+
+/**  
+ * 创建时间：2015年11月9日 下午11:18:53  
+ * 项目名称：zwplatform   
+ * 文件名称：WorldWindData.java  
+ * 类说明：  
+ *
+ * Modification History:   
+ * Date        Author         Version      Description   
+ * ----------------------------------------------------------------- 
+ * 2015年11月9日     Zhongweng       1.0         1.0 Version   
+ */
+/**
+ * <p>Title: WorldWindData<／p>
+ * <p>Description: <／p>
+ * @author ZhongwengHao
+ * @date 2015年11月9日
+ */
+@Controller
+@RequestMapping("/dataserv")
+public class WorldWindData {
+	private final static String URL_SECU = "http://127.0.0.1:8080/zwplatform/servSecu/srvReq";
+	@ResponseBody
+	@RequestMapping(value = "/worldwind")
+	public MdlWorldWindRsp ServerSecuRequest(
+			@RequestParam(value = "tk") String token,
+			@RequestParam(value = "tm") String timestamp) {
+		
+		MdlWorldWindRsp mdlresp = new MdlWorldWindRsp();
+		//验证合法性
+		if (StringUtil.isNullOrEmpty(token)
+				|| StringUtil.isNullOrEmpty(timestamp)) {
+			mdlresp.setRespString("tokenOrtimestamp empty or null");
+			return mdlresp;
+		}
+		//向安全服务验证请求
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("tk", token);
+		map.put("tm", timestamp);
+		String responseString = null;
+		try {
+			responseString = HttpClientUtil.httpPost(URL_SECU, map, "UTF-8");
+			System.out.println(responseString);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			mdlresp.setRespString("WorldWindData Server error:post data to Secu server");
+			return mdlresp;
+		}
+		//验证通过则发送相关数据
+		ServSecuMdlRespServer mdlrespSecu = JsonUtils.deserialize(responseString, ServSecuMdlRespServer.class);
+		if (!mdlrespSecu.isValid()) {
+			//验证失败
+			mdlresp.setRespString("valid failed!");
+			return mdlresp;
+		}
+		mdlresp.setRespString("valid sucess,12355sadfajsodfijejasldfjieasjdflajsldjfiealsjdfiejaljdfoej!");
+		return mdlresp;
+		
+	}
+}

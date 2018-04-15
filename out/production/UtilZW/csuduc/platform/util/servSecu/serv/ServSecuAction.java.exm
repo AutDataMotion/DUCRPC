@@ -1,0 +1,104 @@
+/**
+ * <p>title:ServSecuAction.java<／p>
+ * <p>Description: <／p>
+ * @date:2015年11月9日下午11:33:54
+ * @author：ZhongwengHao email:zhongweng.hao@qq.com
+ * @version 1.0
+ */
+package csuduc.platform.util.servSecu.serv;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import csuduc.platform.util.StringUtil;
+import csuduc.platform.util.encrypt.DESCoder;
+import csuduc.platform.util.servSecu.core.ImpServSecuCore;
+import csuduc.platform.util.servSecu.core.ServSecuConf;
+import csuduc.platform.util.servSecu.core.ServSecuEncrypt;
+import csuduc.platform.util.servSecu.core.ServSecuMdl;
+import csuduc.platform.util.servSecu.core.ServSecuMdlRespClient;
+import csuduc.platform.util.servSecu.core.ServSecuMdlRespServer;
+
+/**  
+ * 创建时间：2015年11月9日 下午11:33:54  
+ * 项目名称：zwplatform   
+ * 文件名称：ServSecuAction.java  
+ * 类说明：  
+ *
+ * Modification History:   
+ * Date        Author         Version      Description   
+ * ----------------------------------------------------------------- 
+ * 2015年11月9日     Zhongweng       1.0         1.0 Version   
+ */
+/**
+ * <p>
+ * Title: ServSecuAction<／p>
+ * <p>
+ * Description: <／p>
+ * 
+ * @author ZhongwengHao
+ * @date 2015年11月9日
+ */
+@Controller
+@RequestMapping("/servSecu")
+public class ServSecuAction {
+	@ResponseBody
+	@RequestMapping(value = "/cltReq")
+	public ServSecuMdlRespClient clientSecuRequest(@RequestParam(value = "radom") String radomStr) {
+		ServSecuMdlRespClient mdlRespClient = new ServSecuMdlRespClient();
+		//验证身份
+		String identityStr = null;
+		
+		try {
+			identityStr = ServSecuEncrypt.DescryptDES(radomStr);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			mdlRespClient.setServDataURL("error");
+			return mdlRespClient;
+		}
+		
+		ServSecuMdl mdl = ImpServSecuCore.getInstance().getTokenTimestampMdl();
+
+		try {
+			mdlRespClient.setServDataURL(ServSecuEncrypt.EncryptDEC(ServSecuConf.URL_SERV_WW.getBytes()));
+			mdlRespClient.setTimeStampStr(ServSecuEncrypt.EncryptDEC(mdl.getTimestamp_bStr().getBytes()));
+			mdlRespClient.setTokenStr(ServSecuEncrypt.EncryptDEC(mdl.getTokenStr().getBytes()));
+			System.out.println(mdlRespClient.getTimeStampStr());
+			System.out.println(mdlRespClient.getTokenStr());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mdlRespClient;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/srvReq")
+	public ServSecuMdlRespServer ServerSecuRequest(
+			@RequestParam(value = "tk") String token,
+			@RequestParam(value = "tm") String timestamp) {
+		ServSecuMdlRespServer mdlRespServer = new ServSecuMdlRespServer();
+		if (StringUtil.isNullOrEmpty(token)
+				|| StringUtil.isNullOrEmpty(timestamp)) {
+			mdlRespServer.setValid(false);
+			return mdlRespServer;
+		}
+
+		ServSecuMdl mdlSec = new ServSecuMdl();
+		try {
+			mdlSec.setTokenStr(ServSecuEncrypt.DescryptDES(token));
+			mdlSec.setTimestamp_bStr(ServSecuEncrypt.DescryptDES(timestamp));
+			mdlRespServer.setValid(ImpServSecuCore.getInstance().isValid(mdlSec));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			mdlRespServer.setValid(false);
+		}
+		return mdlRespServer;
+	}
+
+}
