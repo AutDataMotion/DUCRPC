@@ -216,8 +216,7 @@ public class IceClientUtil {
 			while (!Thread.currentThread().isInterrupted()) {
 				try {
 					Thread.sleep(10000L);
-					if (lastAccessTimestamp + idleTimeOutSeconds * 1000L < System
-							.currentTimeMillis()) {
+					if (lastAccessTimestamp + idleTimeOutSeconds * 1000L < System.currentTimeMillis()) {
 						closeCommunicator(true);
 					}
 				} catch (Exception e) {
