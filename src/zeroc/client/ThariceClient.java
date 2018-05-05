@@ -12,19 +12,19 @@ import RPCRice.DirArgsHolder;
 import RPCRice.Drought;
 import RPCRice.Yield;
 
-
 /**
  * @author zhongweng
  *
  */
 
 public class ThariceClient {
-	public final  static String serverAddr = "tharice:default -h 10.2.3.119 -p 9999";
+	public final static String serverAddr = "thairice:default -h 10.2.29.74 -p 8888";
+
 	public static void main(String[] args) {
 		int status = 0;
 		Ice.Communicator ic = null;
 		try {
-			//initialize the Ice run time
+			// initialize the Ice run time
 			ic = Ice.Util.initialize(args);
 			// obtain a proxy for the remote printer
 			System.out.println("---client---start");
@@ -34,29 +34,69 @@ public class ThariceClient {
 				throw new Error("Invalid proxy");
 
 			// ==============classify
-			Classify inputclass = new Classify();
-			inputclass.id = 1;
-			inputclass.imagePath = "";
-			Map<String, String> mapArgs = new HashMap<String, String>(){{
-				put("argKey1", "value1");
-				put("argKey2", "value2");
-			}};
-			
-			String maxlikehood = proxy.maxlikehood(inputclass, mapArgs);
-			System.out.println("RPC Res maxlikehood:"+maxlikehood);
-			
+			Classify argClassify = new Classify();
+			argClassify.id = 1;
+			argClassify.imagePath = "D:\\classify\\data\\oli_20140102_22_Clip1.tif";
+			argClassify.outPathTif = "D:\\classify\\result2";
+			argClassify.outPathShp = "D:\\\\classify\\\\category";
+			argClassify.lablePath = "D:\\classify\\lable2";
+			argClassify.roiPath = "D:\\classify\\roi2";
+			argClassify.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
+			argClassify.outCode = "72";
+			argClassify.shpfile1 = "D:\\classify\\shp\\Thailand_SuphanburiProvince.shp";
+			argClassify.shpfile2 = "D:\\\\classify\\\\shp\\\\Thailand_SuphanburiProvince_County.shp";
+			argClassify.shpfile3 = "D:\\\\classify\\\\shp\\\\Thailand_SuphanburiProvince_Town.shp";
+
+			Map<String, String> mapArgs = new HashMap<String, String>() {
+				{
+					put("argKey1", "value1");
+					put("argKey2", "value2");
+				}
+			};
+
+		//	String maxlikehood = proxy.maxlikehood(argClassify, mapArgs);
+		//	System.out.println("RPC Res maxlikehood:" + maxlikehood);
+
 			// ==============Yield
-			Yield inputyield  = new Yield();
-			inputyield.id  = 2;
-			String landyield = proxy.landyield(inputyield, mapArgs);
-			System.out.println("RPC Res landyield:"+landyield);
-			
+			Yield argYield = new Yield();
+			argYield.id = 2;
+			argYield.pathNdvi = "D:\\yield\\yield4\\filename.txt";
+			argYield.imageLanduse = "D:\\yield\\yield4\\land\\Suphanburd_land_250p_N.tif";
+			argYield.pathStatistics = "D:\\yield\\yield4\\statistic\\Suphanburd.csv";
+			argYield.outPathClip = "D:\\yield\\yield4\\clip";
+			argYield.outPathMusk = "D:\\yield\\yield4\\musk";
+			argYield.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
+			argYield.outCode = "72";
+			argYield.outPathTif = "D:\\yield\\yield4\\tif";
+			argYield.outPathShp = "D:\\\\yield\\\\yield4\\\\result";
+			argYield.shpfile1 = "D:\\yield\\yield4\\shp\\Thailand_SuphanburiProvince.shp";
+			argYield.shpfile2 = "D:\\\\yield\\yield4\\\\shp\\\\Thailand_SuphanburiProvince_County.shp";
+			argYield.shpfile3 = "D:\\\\yield\\\\yield4\\shp\\\\Thailand_SuphanburiProvince_Town.shp";
+
+//			String landyield = proxy.landyield(argYield, mapArgs);
+//			System.out.println("RPC Res landyield:" + landyield);
+
 			// ==============Drought
-			Drought inputdrought = new Drought();
-			inputdrought.id = 3;
-			String landdrought = proxy.landdrought(inputdrought, mapArgs);
-			System.out.println("RPC Res landdrought:"+landdrought);
-			
+			Drought argDrought = new Drought();
+			argDrought.id = 3;
+			argDrought.imageLst = "D:\\drought\\data\\Thailand_LST_2017209.tif";
+			argDrought.imageNdvi = "D:\\drought\\data\\Thailand_NDVI_2017209.tif";
+			argDrought.imageLanduse = "D:\\drought\\land\\ThailandAgriculturalLand_1km_N_n.tif";
+			argDrought.outPathClip = "D:\\drought\\clip";
+			argDrought.outPathMusk = "D:\\drought\\musk";
+			argDrought.outPathTif = "D:\\drought\\tif";
+			argDrought.outPathShp = "D:\\\\drought\\\\result";
+			argDrought.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
+			argDrought.shpfile1 = "D:\\drought\\shp\\Thailand.shp";
+			argDrought.shpfile2 = "D:\\\\drought\\\\shp\\\\Thailand_Province.shp";
+			argDrought.threshold1 = 0.2f;
+			argDrought.threshold2 = 0.4f;
+			argDrought.threshold3 = 0.6f;
+			argDrought.threshold4 = 0.8f;
+
+			String landdrought = proxy.landdrought(argDrought, mapArgs);
+			System.out.println("RPC Res landdrought:" + landdrought);
+
 		} catch (Ice.LocalException e) {
 			e.printStackTrace();
 			status = 1;
