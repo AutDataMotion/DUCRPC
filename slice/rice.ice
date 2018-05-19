@@ -3,6 +3,18 @@ RPC调用接口
 */
 
 module RPCRice {
+	struct PreProcess{
+  		int id; 			//任务编号
+		string h26v06;	//MODIS数据条带1
+   		string h27v06;	//MODIS数据条带2
+  		 string h27v07;	//MODIS数据条带3
+   		string h27v08;	//MODIS数据条带4
+   		string h28v07;	//MODIS数据条带5
+   		string h28v08;	//MODIS数据条带6
+   		string shpfile;	//泰国全国矢量边界shp文件
+   		string outFile;	//预处理结果存放路径
+   };
+   
    struct Classify{
    		int		id;						// 任务编号
    		string imagePath;       //Landsat预处理后图像路径
@@ -34,6 +46,17 @@ module RPCRice {
    		float threshold3;        //阈值参数1：默认为0.6
    		float threshold4;        //阈值参数1：默认为0.8
    };
+   struct Growth{
+   		int	id;					//任务编号
+		string imgPath;			//输入文件路径，MOD13Q1：250米植被指数产品
+		int	begYr;				//历史数据起始年份（需要确保系统中有从起始年份到结束年份的MOD13Q1数据）
+		int	endYr;				//历史数据结束年份
+		float trVal1;	//阈值参数1
+		float trVal2;	//阈值参数2
+		float trVal3;	//阈值参数3
+		float trVal4;	//阈值参数4
+		string outFile;			//输出结果路径
+};
     struct Yield{
     	int		id;						// 任务编号
 		string	pathNdvi;			//NDVI存储路径txt
@@ -53,9 +76,14 @@ module RPCRice {
     dictionary<string, string> DirArgs;
     
     interface InfRice {
+   		 // 预处理
+		string PreProcessing(PreProcess inputfile, DirArgs mapArgs);
     
     	// 面积监测
     	string maxlikehood (Classify inputclass, DirArgs mapArgs);
+    	
+    	// 长势监测
+		string GrowthMonitor(Growth inputGrowth, DirArgs mapArgs);
     	
     	// 水稻估产
  		string landyield(Yield inputyield, DirArgs mapArgs);

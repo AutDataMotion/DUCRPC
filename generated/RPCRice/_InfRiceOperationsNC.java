@@ -22,7 +22,11 @@ package RPCRice;
 
 public interface _InfRiceOperationsNC
 {
+    String PreProcessing(PreProcess inputfile, java.util.Map<java.lang.String, java.lang.String> mapArgs);
+
     String maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs);
+
+    String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 
     String landyield(Yield inputyield, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 
