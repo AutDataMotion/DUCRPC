@@ -40,9 +40,9 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
 
     public String pathGdalwarpS;
 
-    public String shpfile1;
+    public String shpfileNation;
 
-    public String shpfile2;
+    public String shpfileProvince;
 
     public float threshold1;
 
@@ -62,11 +62,11 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         outPathTif = "";
         outPathShp = "";
         pathGdalwarpS = "";
-        shpfile1 = "";
-        shpfile2 = "";
+        shpfileNation = "";
+        shpfileProvince = "";
     }
 
-    public Drought(int id, String imageLst, String imageNdvi, String imageLanduse, String outPathClip, String outPathMusk, String outPathTif, String outPathShp, String pathGdalwarpS, String shpfile1, String shpfile2, float threshold1, float threshold2, float threshold3, float threshold4)
+    public Drought(int id, String imageLst, String imageNdvi, String imageLanduse, String outPathClip, String outPathMusk, String outPathTif, String outPathShp, String pathGdalwarpS, String shpfileNation, String shpfileProvince, float threshold1, float threshold2, float threshold3, float threshold4)
     {
         this.id = id;
         this.imageLst = imageLst;
@@ -77,8 +77,8 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         this.outPathTif = outPathTif;
         this.outPathShp = outPathShp;
         this.pathGdalwarpS = pathGdalwarpS;
-        this.shpfile1 = shpfile1;
-        this.shpfile2 = shpfile2;
+        this.shpfileNation = shpfileNation;
+        this.shpfileProvince = shpfileProvince;
         this.threshold1 = threshold1;
         this.threshold2 = threshold2;
         this.threshold3 = threshold3;
@@ -160,16 +160,16 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(shpfile1 != _r.shpfile1)
+            if(shpfileNation != _r.shpfileNation)
             {
-                if(shpfile1 == null || _r.shpfile1 == null || !shpfile1.equals(_r.shpfile1))
+                if(shpfileNation == null || _r.shpfileNation == null || !shpfileNation.equals(_r.shpfileNation))
                 {
                     return false;
                 }
             }
-            if(shpfile2 != _r.shpfile2)
+            if(shpfileProvince != _r.shpfileProvince)
             {
-                if(shpfile2 == null || _r.shpfile2 == null || !shpfile2.equals(_r.shpfile2))
+                if(shpfileProvince == null || _r.shpfileProvince == null || !shpfileProvince.equals(_r.shpfileProvince))
                 {
                     return false;
                 }
@@ -211,8 +211,8 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         __h = IceInternal.HashUtil.hashAdd(__h, outPathTif);
         __h = IceInternal.HashUtil.hashAdd(__h, outPathShp);
         __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile1);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile2);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfileNation);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfileProvince);
         __h = IceInternal.HashUtil.hashAdd(__h, threshold1);
         __h = IceInternal.HashUtil.hashAdd(__h, threshold2);
         __h = IceInternal.HashUtil.hashAdd(__h, threshold3);
@@ -247,8 +247,8 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         __os.writeString(outPathTif);
         __os.writeString(outPathShp);
         __os.writeString(pathGdalwarpS);
-        __os.writeString(shpfile1);
-        __os.writeString(shpfile2);
+        __os.writeString(shpfileNation);
+        __os.writeString(shpfileProvince);
         __os.writeFloat(threshold1);
         __os.writeFloat(threshold2);
         __os.writeFloat(threshold3);
@@ -267,8 +267,8 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         outPathTif = __is.readString();
         outPathShp = __is.readString();
         pathGdalwarpS = __is.readString();
-        shpfile1 = __is.readString();
-        shpfile2 = __is.readString();
+        shpfileNation = __is.readString();
+        shpfileProvince = __is.readString();
         threshold1 = __is.readFloat();
         threshold2 = __is.readFloat();
         threshold3 = __is.readFloat();
@@ -301,5 +301,5 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
     
     private static final Drought __nullMarshalValue = new Drought();
 
-    public static final long serialVersionUID = 6045515222322230514L;
+    public static final long serialVersionUID = -1049302570339095784L;
 }

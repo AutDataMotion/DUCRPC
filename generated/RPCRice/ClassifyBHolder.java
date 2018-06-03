@@ -20,15 +20,15 @@
 
 package RPCRice;
 
-public final class ClassifyHolder extends Ice.Holder<Classify>
+public final class ClassifyBHolder extends Ice.Holder<ClassifyB>
 {
     public
-    ClassifyHolder()
+    ClassifyBHolder()
     {
     }
 
     public
-    ClassifyHolder(Classify value)
+    ClassifyBHolder(ClassifyB value)
     {
         super(value);
     }

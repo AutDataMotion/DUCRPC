@@ -6,9 +6,8 @@ package zeroc.client;
 import java.util.HashMap;
 import java.util.Map;
 
-import RPCImgRecong.WordWiki;
-import RPCRice.Classify;
-import RPCRice.DirArgsHolder;
+import RPCRice.ClassifyA;
+import RPCRice.ClassifyB;
 import RPCRice.Drought;
 import RPCRice.Growth;
 import RPCRice.PreProcess;
@@ -41,72 +40,45 @@ public class ThariceClient {
 					put("argKey2", "value2");
 				}
 			};
-			
+
 			// ===============预处理
 			PreProcess argPreProcess = new PreProcess();
 			argPreProcess.id = 1;
-			argPreProcess.h26v06 = "h26v06";
-			argPreProcess.h27v06 = "h27v06";
-			argPreProcess.h27v07 = "h27v07";
-			argPreProcess.h27v08 = "h27v08";
-			argPreProcess.h28v07 = "h28v07";
-			argPreProcess.h28v08 = "h28v08";
-			argPreProcess.shpfile = "D:\\classify\\lable2\\shpfile.shp";
-			argPreProcess.outFile = "D:\\classify\\lable2";
+			argPreProcess.h26v06 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h26v06.006.2017218051159.hdf";
+			argPreProcess.h27v06 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h27v06.006.2017218050132.hdf";
+			argPreProcess.h27v07 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h27v07.006.2017218045926.hdf";
+			argPreProcess.h27v08 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h27v08.006.2017218045323.hdf";
+			argPreProcess.h28v07 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h28v07.006.2017218050254.hdf";
+			argPreProcess.h28v08 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h28v08.006.2017218050332.hdf";
+			argPreProcess.shpfile = "D:\\drought\\shp\\Thailand.shp";
+			argPreProcess.outFile = "D:\\Preprocess\\result";
 
 			String resPreProcess = proxy.PreProcessing(argPreProcess, mapArgs);
 			System.out.println("RPC Res PreProcessing:" + resPreProcess);
-			
+
 			// ==============面积监测
-			Classify argClassify = new Classify();
-			argClassify.id = 1;
-			argClassify.imagePath = "D:\\classify\\data\\oli_20140102_22_Clip1.tif";
-			argClassify.outPathTif = "D:\\classify\\result2";
-			argClassify.outPathShp = "D:\\\\classify\\\\category";
-			argClassify.lablePath = "D:\\classify\\lable2";
-			argClassify.roiPath = "D:\\classify\\roi2";
-			argClassify.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
-			argClassify.outCode = "72";
-			argClassify.shpfile1 = "D:\\classify\\shp\\Thailand_SuphanburiProvince.shp";
-			argClassify.shpfile2 = "D:\\\\classify\\\\shp\\\\Thailand_SuphanburiProvince_County.shp";
-			argClassify.shpfile3 = "D:\\\\classify\\\\shp\\\\Thailand_SuphanburiProvince_Town.shp";
+			ClassifyA argClassifyA = new ClassifyA();
+			argClassifyA.id = 1;
+			argClassifyA.imagePath = "D:\\classify\\data\\oli_20140102_22_Clip1.tif";
+			argClassifyA.outPathTif = "D:\\classify\\result2";
+			argClassifyA.outPathShp = "D:\\\\classify\\\\category";
+			argClassifyA.lablePath = "D:\\classify\\lable2";
+			argClassifyA.roiPath = "D:\\classify\\roi2";
+			argClassifyA.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
+			argClassifyA.outCode = "72";
+			argClassifyA.shpfileProvince = "D:\\classify\\shp\\Thailand_SuphanburiProvince.shp";
 
-		//	String maxlikehood = proxy.maxlikehood(argClassify, mapArgs);
-		//	System.out.println("RPC Res maxlikehood:" + maxlikehood);
-			
-			// ==============长势监测
-			Growth argGrowth = new Growth();
-			argGrowth.id = 1;
-			argGrowth.imgPath = "h26v06";
-			argGrowth.begYr = 20120101;
-			argGrowth.endYr = 20120201;
-			argGrowth.trVal1 = 0.1f;
-			argGrowth.trVal2 = 0.2f;
-			argGrowth.trVal3 = 0.3f;
-			argGrowth.trVal4 = 0.4f;
-			argGrowth.outFile = "D:\\classify\\lable2";
+			// String maxlikehood = proxy.maxlikehood(argClassifyA, mapArgs);
+			// System.out.println("RPC Res maxlikehood:" + maxlikehood);
 
-			String resGrowth = proxy.GrowthMonitor(argGrowth, mapArgs);
-			System.out.println("RPC Res GrowthMonitor:" + resGrowth);
-			
-			// ==============水稻估产
-			Yield argYield = new Yield();
-			argYield.id = 2;
-			argYield.pathNdvi = "D:\\yield\\yield4\\filename.txt";
-			argYield.imageLanduse = "D:\\yield\\yield4\\land\\Suphanburd_land_250p_N.tif";
-			argYield.pathStatistics = "D:\\yield\\yield4\\statistic\\Suphanburd.csv";
-			argYield.outPathClip = "D:\\yield\\yield4\\clip";
-			argYield.outPathMusk = "D:\\yield\\yield4\\musk";
-			argYield.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
-			argYield.outCode = "72";
-			argYield.outPathTif = "D:\\yield\\yield4\\tif";
-			argYield.outPathShp = "D:\\\\yield\\\\yield4\\\\result";
-			argYield.shpfile1 = "D:\\yield\\yield4\\shp\\Thailand_SuphanburiProvince.shp";
-			argYield.shpfile2 = "D:\\\\yield\\yield4\\\\shp\\\\Thailand_SuphanburiProvince_County.shp";
-			argYield.shpfile3 = "D:\\\\yield\\\\yield4\\shp\\\\Thailand_SuphanburiProvince_Town.shp";
+			ClassifyB argClassifyB = new ClassifyB();
+			argClassifyB.id = 1;
+			argClassifyB.modClassShp = "D:\\classify\\category\\dissolve_72.shp";
+			argClassifyB.shpfileCounty = "D:\\classify\\shp\\Thailand_SuphanburiProvince_County.shp";
+			argClassifyB.shpfileTown = "D:\\classify\\shp\\Thailand_SuphanburiProvince_Town.shp";
 
-//			String landyield = proxy.landyield(argYield, mapArgs);
-//			System.out.println("RPC Res landyield:" + landyield);
+			// String split = proxy.split(argClassifyB, mapArgs);
+			// System.out.println("RPC Res split:" + split);
 
 			// ==============干旱监测
 			Drought argDrought = new Drought();
@@ -119,16 +91,50 @@ public class ThariceClient {
 			argDrought.outPathTif = "D:\\drought\\tif";
 			argDrought.outPathShp = "D:\\\\drought\\\\result";
 			argDrought.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
-			argDrought.shpfile1 = "D:\\drought\\shp\\Thailand.shp";
-			argDrought.shpfile2 = "D:\\\\drought\\\\shp\\\\Thailand_Province.shp";
+			argDrought.shpfileNation = "D:\\drought\\shp\\Thailand.shp";
+			argDrought.shpfileProvince = "D:\\\\drought\\\\shp\\\\Thailand_Province.shp";
 			argDrought.threshold1 = 0.2f;
 			argDrought.threshold2 = 0.4f;
 			argDrought.threshold3 = 0.6f;
 			argDrought.threshold4 = 0.8f;
 
-//			String landdrought = proxy.landdrought(argDrought, mapArgs);
-//			System.out.println("RPC Res landdrought:" + landdrought);
-			
+			// String landdrought = proxy.landdrought(argDrought, mapArgs);
+			// System.out.println("RPC Res landdrought:" + landdrought);
+
+			// ==============长势监测
+			Growth argGrowth = new Growth();
+			argGrowth.id = 1;
+			argGrowth.imgPath = "D:\\grouth\\data\\Clip_N2_2017.tif";
+			argGrowth.begYr = 2001;
+			argGrowth.endYr = 2016;
+			argGrowth.trVal1 = -0.3f;
+			argGrowth.trVal2 = -0.1f;
+			argGrowth.trVal3 = 0.1f;
+			argGrowth.trVal4 = 0.3f;
+			argGrowth.outFile = "D:\\grouth\\result";
+
+			String resGrowth = proxy.GrowthMonitor(argGrowth, mapArgs);
+			System.out.println("RPC Res GrowthMonitor:" + resGrowth);
+
+			// ==============水稻估产
+			Yield argYield = new Yield();
+			argYield.id = 2;
+			argYield.pathNdvi = "D:\\yield\\yield4\\filename.txt";
+			argYield.imageLanduse = "D:\\yield\\yield4\\land\\Suphanburd_land_250p_N.tif";
+			argYield.pathStatistics = "D:\\yield\\yield4\\statistic\\Suphanburd.csv";
+			argYield.outPathClip = "D:\\yield\\yield4\\clip";
+			argYield.outPathMusk = "D:\\yield\\yield4\\musk";
+			argYield.pathGdalwarpS = "C:\\warmerda\\bld\\bin\\gdalwarp.exe";
+			argYield.outCode = "72";
+			argYield.outPathTif = "D:\\yield\\yield4\\tif";
+			argYield.outPathShp = "D:\\\\yield\\\\yield4\\\\result";
+			argYield.shpfileProvince = "D:\\yield\\yield4\\shp\\Thailand_SuphanburiProvince.shp";
+			argYield.shpfileCounty = "D:\\\\yield\\yield4\\\\shp\\\\Thailand_SuphanburiProvince_County.shp";
+			argYield.shpfileTown = "D:\\\\yield\\\\yield4\\shp\\\\Thailand_SuphanburiProvince_Town.shp";
+
+			// String landyield = proxy.landyield(argYield, mapArgs);
+			// System.out.println("RPC Res landyield:" + landyield);
+
 		} catch (Ice.LocalException e) {
 			e.printStackTrace();
 			status = 1;

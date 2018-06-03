@@ -42,11 +42,11 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
 
     public String outPathShp;
 
-    public String shpfile1;
+    public String shpfileProvince;
 
-    public String shpfile2;
+    public String shpfileCounty;
 
-    public String shpfile3;
+    public String shpfileTown;
 
     public Yield()
     {
@@ -59,12 +59,12 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         outCode = "";
         outPathTif = "";
         outPathShp = "";
-        shpfile1 = "";
-        shpfile2 = "";
-        shpfile3 = "";
+        shpfileProvince = "";
+        shpfileCounty = "";
+        shpfileTown = "";
     }
 
-    public Yield(int id, String pathNdvi, String imageLanduse, String pathStatistics, String outPathClip, String outPathMusk, String pathGdalwarpS, String outCode, String outPathTif, String outPathShp, String shpfile1, String shpfile2, String shpfile3)
+    public Yield(int id, String pathNdvi, String imageLanduse, String pathStatistics, String outPathClip, String outPathMusk, String pathGdalwarpS, String outCode, String outPathTif, String outPathShp, String shpfileProvince, String shpfileCounty, String shpfileTown)
     {
         this.id = id;
         this.pathNdvi = pathNdvi;
@@ -76,9 +76,9 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         this.outCode = outCode;
         this.outPathTif = outPathTif;
         this.outPathShp = outPathShp;
-        this.shpfile1 = shpfile1;
-        this.shpfile2 = shpfile2;
-        this.shpfile3 = shpfile3;
+        this.shpfileProvince = shpfileProvince;
+        this.shpfileCounty = shpfileCounty;
+        this.shpfileTown = shpfileTown;
     }
 
     public boolean
@@ -163,23 +163,23 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(shpfile1 != _r.shpfile1)
+            if(shpfileProvince != _r.shpfileProvince)
             {
-                if(shpfile1 == null || _r.shpfile1 == null || !shpfile1.equals(_r.shpfile1))
+                if(shpfileProvince == null || _r.shpfileProvince == null || !shpfileProvince.equals(_r.shpfileProvince))
                 {
                     return false;
                 }
             }
-            if(shpfile2 != _r.shpfile2)
+            if(shpfileCounty != _r.shpfileCounty)
             {
-                if(shpfile2 == null || _r.shpfile2 == null || !shpfile2.equals(_r.shpfile2))
+                if(shpfileCounty == null || _r.shpfileCounty == null || !shpfileCounty.equals(_r.shpfileCounty))
                 {
                     return false;
                 }
             }
-            if(shpfile3 != _r.shpfile3)
+            if(shpfileTown != _r.shpfileTown)
             {
-                if(shpfile3 == null || _r.shpfile3 == null || !shpfile3.equals(_r.shpfile3))
+                if(shpfileTown == null || _r.shpfileTown == null || !shpfileTown.equals(_r.shpfileTown))
                 {
                     return false;
                 }
@@ -206,9 +206,9 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         __h = IceInternal.HashUtil.hashAdd(__h, outCode);
         __h = IceInternal.HashUtil.hashAdd(__h, outPathTif);
         __h = IceInternal.HashUtil.hashAdd(__h, outPathShp);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile1);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile2);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile3);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfileProvince);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfileCounty);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfileTown);
         return __h;
     }
 
@@ -240,9 +240,9 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         __os.writeString(outCode);
         __os.writeString(outPathTif);
         __os.writeString(outPathShp);
-        __os.writeString(shpfile1);
-        __os.writeString(shpfile2);
-        __os.writeString(shpfile3);
+        __os.writeString(shpfileProvince);
+        __os.writeString(shpfileCounty);
+        __os.writeString(shpfileTown);
     }
 
     public void
@@ -258,9 +258,9 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         outCode = __is.readString();
         outPathTif = __is.readString();
         outPathShp = __is.readString();
-        shpfile1 = __is.readString();
-        shpfile2 = __is.readString();
-        shpfile3 = __is.readString();
+        shpfileProvince = __is.readString();
+        shpfileCounty = __is.readString();
+        shpfileTown = __is.readString();
     }
 
     static public void
@@ -289,5 +289,5 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
     
     private static final Yield __nullMarshalValue = new Yield();
 
-    public static final long serialVersionUID = -7198451177587493745L;
+    public static final long serialVersionUID = 8993452165301273405L;
 }

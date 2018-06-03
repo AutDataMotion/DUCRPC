@@ -20,7 +20,7 @@
 
 package RPCRice;
 
-public class Classify implements java.lang.Cloneable, java.io.Serializable
+public class ClassifyA implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
@@ -38,13 +38,9 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
 
     public String outCode;
 
-    public String shpfile1;
+    public String shpfileProvince;
 
-    public String shpfile2;
-
-    public String shpfile3;
-
-    public Classify()
+    public ClassifyA()
     {
         imagePath = "";
         outPathTif = "";
@@ -53,12 +49,10 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
         roiPath = "";
         pathGdalwarpS = "";
         outCode = "";
-        shpfile1 = "";
-        shpfile2 = "";
-        shpfile3 = "";
+        shpfileProvince = "";
     }
 
-    public Classify(int id, String imagePath, String outPathTif, String outPathShp, String lablePath, String roiPath, String pathGdalwarpS, String outCode, String shpfile1, String shpfile2, String shpfile3)
+    public ClassifyA(int id, String imagePath, String outPathTif, String outPathShp, String lablePath, String roiPath, String pathGdalwarpS, String outCode, String shpfileProvince)
     {
         this.id = id;
         this.imagePath = imagePath;
@@ -68,9 +62,7 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
         this.roiPath = roiPath;
         this.pathGdalwarpS = pathGdalwarpS;
         this.outCode = outCode;
-        this.shpfile1 = shpfile1;
-        this.shpfile2 = shpfile2;
-        this.shpfile3 = shpfile3;
+        this.shpfileProvince = shpfileProvince;
     }
 
     public boolean
@@ -80,10 +72,10 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
         {
             return true;
         }
-        Classify _r = null;
-        if(rhs instanceof Classify)
+        ClassifyA _r = null;
+        if(rhs instanceof ClassifyA)
         {
-            _r = (Classify)rhs;
+            _r = (ClassifyA)rhs;
         }
 
         if(_r != null)
@@ -141,23 +133,9 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(shpfile1 != _r.shpfile1)
+            if(shpfileProvince != _r.shpfileProvince)
             {
-                if(shpfile1 == null || _r.shpfile1 == null || !shpfile1.equals(_r.shpfile1))
-                {
-                    return false;
-                }
-            }
-            if(shpfile2 != _r.shpfile2)
-            {
-                if(shpfile2 == null || _r.shpfile2 == null || !shpfile2.equals(_r.shpfile2))
-                {
-                    return false;
-                }
-            }
-            if(shpfile3 != _r.shpfile3)
-            {
-                if(shpfile3 == null || _r.shpfile3 == null || !shpfile3.equals(_r.shpfile3))
+                if(shpfileProvince == null || _r.shpfileProvince == null || !shpfileProvince.equals(_r.shpfileProvince))
                 {
                     return false;
                 }
@@ -173,7 +151,7 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
     hashCode()
     {
         int __h = 5381;
-        __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::Classify");
+        __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::ClassifyA");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
         __h = IceInternal.HashUtil.hashAdd(__h, imagePath);
         __h = IceInternal.HashUtil.hashAdd(__h, outPathTif);
@@ -182,19 +160,17 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
         __h = IceInternal.HashUtil.hashAdd(__h, roiPath);
         __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
         __h = IceInternal.HashUtil.hashAdd(__h, outCode);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile1);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile2);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile3);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfileProvince);
         return __h;
     }
 
-    public Classify
+    public ClassifyA
     clone()
     {
-        Classify c = null;
+        ClassifyA c = null;
         try
         {
-            c = (Classify)super.clone();
+            c = (ClassifyA)super.clone();
         }
         catch(CloneNotSupportedException ex)
         {
@@ -214,9 +190,7 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
         __os.writeString(roiPath);
         __os.writeString(pathGdalwarpS);
         __os.writeString(outCode);
-        __os.writeString(shpfile1);
-        __os.writeString(shpfile2);
-        __os.writeString(shpfile3);
+        __os.writeString(shpfileProvince);
     }
 
     public void
@@ -230,13 +204,11 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
         roiPath = __is.readString();
         pathGdalwarpS = __is.readString();
         outCode = __is.readString();
-        shpfile1 = __is.readString();
-        shpfile2 = __is.readString();
-        shpfile3 = __is.readString();
+        shpfileProvince = __is.readString();
     }
 
     static public void
-    __write(IceInternal.BasicStream __os, Classify __v)
+    __write(IceInternal.BasicStream __os, ClassifyA __v)
     {
         if(__v == null)
         {
@@ -248,18 +220,18 @@ public class Classify implements java.lang.Cloneable, java.io.Serializable
         }
     }
 
-    static public Classify
-    __read(IceInternal.BasicStream __is, Classify __v)
+    static public ClassifyA
+    __read(IceInternal.BasicStream __is, ClassifyA __v)
     {
         if(__v == null)
         {
-             __v = new Classify();
+             __v = new ClassifyA();
         }
         __v.__read(__is);
         return __v;
     }
     
-    private static final Classify __nullMarshalValue = new Classify();
+    private static final ClassifyA __nullMarshalValue = new ClassifyA();
 
-    public static final long serialVersionUID = 1623033619395021783L;
+    public static final long serialVersionUID = 7063235062105169820L;
 }

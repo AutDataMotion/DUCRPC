@@ -90,9 +90,14 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
         return landyield(inputyield, mapArgs, null);
     }
 
-    public final String maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    public final String maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
     {
         return maxlikehood(inputclass, mapArgs, null);
+    }
+
+    public final String split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    {
+        return split(inputclass, mapArgs, null);
     }
 
     public static Ice.DispatchStatus ___PreProcessing(InfRice __obj, IceInternal.Incoming __inS, Ice.Current __current)
@@ -115,12 +120,28 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
     {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
-        Classify inputclass = null;
+        ClassifyA inputclass = null;
         java.util.Map<java.lang.String, java.lang.String> mapArgs;
-        inputclass = Classify.__read(__is, inputclass);
+        inputclass = ClassifyA.__read(__is, inputclass);
         mapArgs = DirArgsHelper.read(__is);
         __inS.endReadParams();
         String __ret = __obj.maxlikehood(inputclass, mapArgs, __current);
+        IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
+        __os.writeString(__ret);
+        __inS.__endWriteParams(true);
+        return Ice.DispatchStatus.DispatchOK;
+    }
+
+    public static Ice.DispatchStatus ___split(InfRice __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    {
+        __checkMode(Ice.OperationMode.Normal, __current.mode);
+        IceInternal.BasicStream __is = __inS.startReadParams();
+        ClassifyB inputclass = null;
+        java.util.Map<java.lang.String, java.lang.String> mapArgs;
+        inputclass = ClassifyB.__read(__is, inputclass);
+        mapArgs = DirArgsHelper.read(__is);
+        __inS.endReadParams();
+        String __ret = __obj.split(inputclass, mapArgs, __current);
         IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
         __os.writeString(__ret);
         __inS.__endWriteParams(true);
@@ -185,7 +206,8 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
         "ice_ping",
         "landdrought",
         "landyield",
-        "maxlikehood"
+        "maxlikehood",
+        "split"
     };
 
     public Ice.DispatchStatus __dispatch(IceInternal.Incoming in, Ice.Current __current)
@@ -233,6 +255,10 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
             case 8:
             {
                 return ___maxlikehood(this, in, __current);
+            }
+            case 9:
+            {
+                return ___split(this, in, __current);
             }
         }
 

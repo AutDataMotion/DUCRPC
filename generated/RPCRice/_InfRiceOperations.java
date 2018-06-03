@@ -24,7 +24,9 @@ public interface _InfRiceOperations
 {
     String PreProcessing(PreProcess inputfile, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Current __current);
 
-    String maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Current __current);
+    String maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Current __current);
+
+    String split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Current __current);
 
     String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Current __current);
 
