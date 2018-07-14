@@ -19,68 +19,64 @@ module RPCRice {
 
     struct ClassifyA{
    		int id;		        // 任务编号
-   		string imagePath;       //Landsat预处理后图像路径 D:\\classify\\data\\oli_20140102_22_Clip1.tif
-        string outPathTif;      //分类结果图像存放文件夹 D:\\classify\\result2
-   		string outPathShp;      //水稻提取结果存放文件夹 D:\\classify\\category
-   		string lablePath;       //样本shp存放文件夹 D:\\classify\\lable2
-   		string roiPath;         //样本ROI文件存放文件夹 D:\\classify\\roi2
-   		string pathGdalwarpS;   //gdal裁剪模块文件路径 C:\\warmerda\\bld\\bin\\gdalwarp.exe
-   		string outCode;         //行政区代码code 72
-   		string shpfileProvince; //行政区范围shp D:\\classify\\shp\\Thailand_SuphanburiProvince.shp
+   		string fileDate;        //文件的collect time  20140102
+   		string imagePath;       // 读库 Landsat预处理后图像路径 D:\\classify\\data\\oli_20140102_22_Clip1.tif
+   		string outCode;         // imagePath的文件名读取 行政区代码code 72
+   		string shpfilePath; // 写死 行政区范围shp D:\\classify\\shp\\Thailand_SuphanburiProvince.shp
+   		string lablePath;       // 云飞 读库  t9sample_info 样本shp存放文件夹 D:\\classify\\lable2
+   		string outprePath;   // 写死 分类结果图像存放文件夹    D:\\Thailand_test\\preshp
+   		string pathGdalwarpS;   // 写死 gdal裁剪模块文件路径 C:\\warmerda\\bld\\bin\\gdalwarp.exe
    };
 
     struct ClassifyB{
-  		int id;		        // 任务编号
-   		string modClassShp;     //修正后省级水稻面积 D:\\classify\\category\\dissolve_72.shp
-   		string shpfileCounty;   //郡级行政区划文件 D:\\classify\\shp\\Thailand_SuphanburiProvince_County.shp
-		string shpfileTown;     //县级行政区划文件 D:\\classify\\shp\\Thailand_SuphanburiProvince_Town.shp
+  		int id;	// 任务编号
+  		string fileDate;        // 文件的collect time 20140102
+		string outCode;         // 读库 云飞写入 在产品表 行政区代码code
+   		string modClassShp;     // 读库 云飞写入 在产品表 修正后省级水稻面积   D:\\Thailand_test\\preshp 
+   		string shpfilePath;      // 写死 泰国矢量文件路径     D:\\Thailand_test\\PCT_shp
+		string outPath;       // 写死 最终结果保存文件夹     D:\\Thailand_test\\classify
    };
 
    
    struct Drought{
    		int id;	// 任务编号
-   		string imageLst;        // 温度文件路径 D:\\drought\\data\\Thailand_LST_2017209.tif
-		string imageNdvi;       // NDVI文件路径 D:\\drought\\data\\Thailand_NDVI_2017209.tif
-   		string imageLanduse;    // 泰国农田栅格数据（1km）D:\\drought\\land\\ThailandAgriculturalLand_1km_N_n.tif
-   		string outPathClip;     // 裁剪后文件存放文件夹 D:\\drought\\clip
-   		string outPathMusk;     // 掩膜处理后文件存放文件夹 D:\\drought\\musk
-    	string outPathTif;      //TVDI结果tif文件存放文件夹 D:\\drought\\tif
-   		string outPathShp;      //干旱分解结果存放路径 D:\\drought\\result
-   		string pathGdalwarpS;   //gdal裁剪模块文件路径 C:\\warmerda\\bld\\bin\\gdalwarp.exe
-   		string shpfileNation;   //泰国全国矢量边界shp文件  D:\\drought\\shp\\Thailand.shp
-   		string shpfileProvince; //泰国省级行政区划shp文件 D:\\drought\\shp\\Thailand_Province.shp
-   		float threshold1;       //阈值参数1：默认为0.2  
-   		float threshold2;       //阈值参数1：默认为0.4
-   		float threshold3;       //阈值参数1：默认为0.6
-   		float threshold4;       //阈值参数1：默认为0.8
+   		string fileDate;        // 文件的collect time 20170728
+   		string imageLst;        // 读库 预处理后的 在产品表 温度文件路径+名称 type 03 LST         D:\\Thailand_test\\data\\Thailand_LST_2017209.tif 
+   		string imageNdvi;       //  读库 预处理后的 在产品表  NDVI文件路径+名称  type 01 NDVI_1        D:\\Thailand_test\\data\\Thailand_NDVI_2017209.tif 
+   		string imageLanduse;    //  写死 泰国农田栅格文件夹   D:\\Thailand_test\\landuse\\1km 
+   		string shpfilelPath;      // 写死 泰国矢量文件路径      D:\\Thailand_test\\shp 
+   		string outPath;      // 写死 干旱最终结果存放文件夹D:\\Thailand_test\\drought 
+   		string pathGdalwarpS;   //  写死 gdal裁剪模块文件路径  C:\\warmerda\\bld\\bin\\gdalwarp.exe 
+   		float threshold1;       // 读库 参数表 阈值参数1：默认为0.2  参数表 
+   		float threshold2;       //读库 参数表 阈值参数1：默认为0.4
+   		float threshold3;       // 读库 参数表 阈值参数1：默认为0.6
+   		float threshold4;       // 读库 参数表 阈值参数1：默认为0.8
    };
 
       struct Growth{
    		int	id;	//任务编号
-		string imgPath;	//输入文件路径，MOD13Q1：250米植被指数产品 D:\\grouth\\data\\Clip_N2_2017.tif
-		int	begYr;	//历史数据起始年份 2001 （需要确保系统中有从起始年份到结束年份的MOD13Q1数据）
-		int	endYr;	//历史数据结束年份 2016
-  		float trVal1;	//阈值参数1 -0.3
-		float trVal2;	//阈值参数2 -0.1
- 		float trVal3;	//阈值参数3  0.1
-		float trVal4;	//阈值参数4  0.3
-		string outFile;	//输出结果路径 D:\\grouth\\result
+   		string fileDate; // 从文件名 collectTime
+   		string pathNdvi; // 读库 预处理完的 tif type 02 NDVI_02 路径+文件名
+		string imageLanduse;	// 写死 D:\\Thailand_test\\landuse
+		string shpfilePath;     // 写死 D:\\Thailand_test\\shp
+		string outPath;         // 写死 D:\\Thailand_test\\grouth
+		string pathGdalwarpS;   // 写死 C:\\warmerda\\bld\\bin\\gdalwarp.exe
+  		float threshold1;       // 读库 长势 阈值参数1：默认为-0.3  参数表 
+   		float threshold2;       // 读库 长势 阈值参数2：默认为-0.1
+   		float threshold3;       // 读库 长势 阈值参数3：默认为0.1
+   		float threshold4;       // 读库 长势 阈值参数4：默认为0.3
 	};
 
       struct Yield{
     	int id;	 // 任务编号
-		string	pathNdvi;		//NDVI存储路径txt D:\\yield\\yield4\\filename.txt
-		string imageLanduse;    //行政区农田栅格数据（250m）D:\\yield\\yield4\\land\\Suphanburd_land_250p_N.tif
-		string pathStatistics;  //行政区农作物产量统计数据  D:\\yield\\yield4\\statistic\\Suphanburd.csv
-		string outPathClip;     //裁剪后NDVI存放路径 D:\\yield\\yield4\\clip
-		string outPathMusk;     //掩膜处理后NDVI存放路径 D:\\yield\\yield4\\musk
-		string pathGdalwarpS;   //gdal裁剪模块文件路径 C:\\warmerda\\bld\\bin\\gdalwarp.exe
-		string outCode;         //行政区对应编码 72
-		string outPathTif;      //估产tif图像存放路径 D:\\yield\\yield4\\tif
-		string outPathShp;      //估产结果shp结果存放路径 D:\\yield\\yield4\\result
-		string shpfileProvince; // 行政区划矢量边界shp D:\\yield\\yield4\\shp\\Thailand_SuphanburiProvince.shp
-		string shpfileCounty;   //市级行政区划shp D:\\yield\\yield4\\shp\\Thailand_SuphanburiProvince_County.shp
-		string shpfileTown;     //县级行政区划shp D:\\yield\\yield4\\shp\\Thailand_SuphanburiProvince_Town.shp
+    	string fileDate;       // 文件的 collect time  20170723
+    	string pathNdvi;	   // 读库 路径+名称 type 02 NDVI_02 t12_pre_process_inf 的filePath fileName  NDVI存储路径txt            D:\\Thailand_test\\data\\Clip_N2_2017.tif
+		string outCode;        // imagePath的文件名读取 行政区对应编码  72 
+		string pathStatistics; // 写死 行政区农作物产量统计数据   D:\\Thailand_test\\statistic\\Suphanburd.csv 
+		string imageLanduse;   // 写死 行政区农田（250m）文件夹   D:\\Thailand_test\\landuse\\250m 
+		string outPath;    // 写死 裁剪后NDVI存放文件夹           D:\\Thailand_test\\yield 
+		string shpfilePath;        // 写死 行政区划矢量边界shp文件夹  D:\\Thailand_test\\shp\\Province 
+		string pathGdalwarpS;  // 写死 gdal裁剪模块文件路径       C:\\warmerda\\bld\\bin\\gdalwarp.exe
 	};
 
     dictionary<string, string> DirArgs;
@@ -95,10 +91,12 @@ module RPCRice {
 		// 修正后面积监测按行政区分解
         string split(ClassifyB inputclass, DirArgs mapArgs); 
 
-    	// 长势监测
+    	// 长势监测preProcessing
+    	// 更具参数表 长势 开始年 到 结束年 预处理后的表中读fileDate该日的 type 02 的所有文件(每一年会有一个)路径+文件名
 		string GrowthMonitor(Growth inputGrowth, DirArgs mapArgs);
  
-    	// 水稻估产
+    	// 水稻估产 string pathNdvi;	   多个NDVI存储路径放在mapArgs <key, value> key:"p1" value:""
+    	// 全国每个code进行遍历调用
 		string landyield(Yield inputyield, DirArgs mapArgs);
  
     	// 干旱监测

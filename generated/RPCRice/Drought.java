@@ -24,25 +24,19 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
+    public String fileDate;
+
     public String imageLst;
 
     public String imageNdvi;
 
     public String imageLanduse;
 
-    public String outPathClip;
+    public String shpfilelPath;
 
-    public String outPathMusk;
-
-    public String outPathTif;
-
-    public String outPathShp;
+    public String outPath;
 
     public String pathGdalwarpS;
-
-    public String shpfileNation;
-
-    public String shpfileProvince;
 
     public float threshold1;
 
@@ -54,31 +48,25 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
 
     public Drought()
     {
+        fileDate = "";
         imageLst = "";
         imageNdvi = "";
         imageLanduse = "";
-        outPathClip = "";
-        outPathMusk = "";
-        outPathTif = "";
-        outPathShp = "";
+        shpfilelPath = "";
+        outPath = "";
         pathGdalwarpS = "";
-        shpfileNation = "";
-        shpfileProvince = "";
     }
 
-    public Drought(int id, String imageLst, String imageNdvi, String imageLanduse, String outPathClip, String outPathMusk, String outPathTif, String outPathShp, String pathGdalwarpS, String shpfileNation, String shpfileProvince, float threshold1, float threshold2, float threshold3, float threshold4)
+    public Drought(int id, String fileDate, String imageLst, String imageNdvi, String imageLanduse, String shpfilelPath, String outPath, String pathGdalwarpS, float threshold1, float threshold2, float threshold3, float threshold4)
     {
         this.id = id;
+        this.fileDate = fileDate;
         this.imageLst = imageLst;
         this.imageNdvi = imageNdvi;
         this.imageLanduse = imageLanduse;
-        this.outPathClip = outPathClip;
-        this.outPathMusk = outPathMusk;
-        this.outPathTif = outPathTif;
-        this.outPathShp = outPathShp;
+        this.shpfilelPath = shpfilelPath;
+        this.outPath = outPath;
         this.pathGdalwarpS = pathGdalwarpS;
-        this.shpfileNation = shpfileNation;
-        this.shpfileProvince = shpfileProvince;
         this.threshold1 = threshold1;
         this.threshold2 = threshold2;
         this.threshold3 = threshold3;
@@ -104,6 +92,13 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
             {
                 return false;
             }
+            if(fileDate != _r.fileDate)
+            {
+                if(fileDate == null || _r.fileDate == null || !fileDate.equals(_r.fileDate))
+                {
+                    return false;
+                }
+            }
             if(imageLst != _r.imageLst)
             {
                 if(imageLst == null || _r.imageLst == null || !imageLst.equals(_r.imageLst))
@@ -125,30 +120,16 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(outPathClip != _r.outPathClip)
+            if(shpfilelPath != _r.shpfilelPath)
             {
-                if(outPathClip == null || _r.outPathClip == null || !outPathClip.equals(_r.outPathClip))
+                if(shpfilelPath == null || _r.shpfilelPath == null || !shpfilelPath.equals(_r.shpfilelPath))
                 {
                     return false;
                 }
             }
-            if(outPathMusk != _r.outPathMusk)
+            if(outPath != _r.outPath)
             {
-                if(outPathMusk == null || _r.outPathMusk == null || !outPathMusk.equals(_r.outPathMusk))
-                {
-                    return false;
-                }
-            }
-            if(outPathTif != _r.outPathTif)
-            {
-                if(outPathTif == null || _r.outPathTif == null || !outPathTif.equals(_r.outPathTif))
-                {
-                    return false;
-                }
-            }
-            if(outPathShp != _r.outPathShp)
-            {
-                if(outPathShp == null || _r.outPathShp == null || !outPathShp.equals(_r.outPathShp))
+                if(outPath == null || _r.outPath == null || !outPath.equals(_r.outPath))
                 {
                     return false;
                 }
@@ -156,20 +137,6 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
             if(pathGdalwarpS != _r.pathGdalwarpS)
             {
                 if(pathGdalwarpS == null || _r.pathGdalwarpS == null || !pathGdalwarpS.equals(_r.pathGdalwarpS))
-                {
-                    return false;
-                }
-            }
-            if(shpfileNation != _r.shpfileNation)
-            {
-                if(shpfileNation == null || _r.shpfileNation == null || !shpfileNation.equals(_r.shpfileNation))
-                {
-                    return false;
-                }
-            }
-            if(shpfileProvince != _r.shpfileProvince)
-            {
-                if(shpfileProvince == null || _r.shpfileProvince == null || !shpfileProvince.equals(_r.shpfileProvince))
                 {
                     return false;
                 }
@@ -203,16 +170,13 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::Drought");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
+        __h = IceInternal.HashUtil.hashAdd(__h, fileDate);
         __h = IceInternal.HashUtil.hashAdd(__h, imageLst);
         __h = IceInternal.HashUtil.hashAdd(__h, imageNdvi);
         __h = IceInternal.HashUtil.hashAdd(__h, imageLanduse);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathClip);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathMusk);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathTif);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathShp);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfilelPath);
+        __h = IceInternal.HashUtil.hashAdd(__h, outPath);
         __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileNation);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileProvince);
         __h = IceInternal.HashUtil.hashAdd(__h, threshold1);
         __h = IceInternal.HashUtil.hashAdd(__h, threshold2);
         __h = IceInternal.HashUtil.hashAdd(__h, threshold3);
@@ -239,16 +203,13 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeInt(id);
+        __os.writeString(fileDate);
         __os.writeString(imageLst);
         __os.writeString(imageNdvi);
         __os.writeString(imageLanduse);
-        __os.writeString(outPathClip);
-        __os.writeString(outPathMusk);
-        __os.writeString(outPathTif);
-        __os.writeString(outPathShp);
+        __os.writeString(shpfilelPath);
+        __os.writeString(outPath);
         __os.writeString(pathGdalwarpS);
-        __os.writeString(shpfileNation);
-        __os.writeString(shpfileProvince);
         __os.writeFloat(threshold1);
         __os.writeFloat(threshold2);
         __os.writeFloat(threshold3);
@@ -259,16 +220,13 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
     __read(IceInternal.BasicStream __is)
     {
         id = __is.readInt();
+        fileDate = __is.readString();
         imageLst = __is.readString();
         imageNdvi = __is.readString();
         imageLanduse = __is.readString();
-        outPathClip = __is.readString();
-        outPathMusk = __is.readString();
-        outPathTif = __is.readString();
-        outPathShp = __is.readString();
+        shpfilelPath = __is.readString();
+        outPath = __is.readString();
         pathGdalwarpS = __is.readString();
-        shpfileNation = __is.readString();
-        shpfileProvince = __is.readString();
         threshold1 = __is.readFloat();
         threshold2 = __is.readFloat();
         threshold3 = __is.readFloat();
@@ -301,5 +259,5 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
     
     private static final Drought __nullMarshalValue = new Drought();
 
-    public static final long serialVersionUID = -1049302570339095784L;
+    public static final long serialVersionUID = 7061280544977091757L;
 }

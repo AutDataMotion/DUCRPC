@@ -24,45 +24,41 @@ public class ClassifyA implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
+    public String fileDate;
+
     public String imagePath;
-
-    public String outPathTif;
-
-    public String outPathShp;
-
-    public String lablePath;
-
-    public String roiPath;
-
-    public String pathGdalwarpS;
 
     public String outCode;
 
-    public String shpfileProvince;
+    public String shpfilePath;
+
+    public String lablePath;
+
+    public String outprePath;
+
+    public String pathGdalwarpS;
 
     public ClassifyA()
     {
+        fileDate = "";
         imagePath = "";
-        outPathTif = "";
-        outPathShp = "";
-        lablePath = "";
-        roiPath = "";
-        pathGdalwarpS = "";
         outCode = "";
-        shpfileProvince = "";
+        shpfilePath = "";
+        lablePath = "";
+        outprePath = "";
+        pathGdalwarpS = "";
     }
 
-    public ClassifyA(int id, String imagePath, String outPathTif, String outPathShp, String lablePath, String roiPath, String pathGdalwarpS, String outCode, String shpfileProvince)
+    public ClassifyA(int id, String fileDate, String imagePath, String outCode, String shpfilePath, String lablePath, String outprePath, String pathGdalwarpS)
     {
         this.id = id;
+        this.fileDate = fileDate;
         this.imagePath = imagePath;
-        this.outPathTif = outPathTif;
-        this.outPathShp = outPathShp;
-        this.lablePath = lablePath;
-        this.roiPath = roiPath;
-        this.pathGdalwarpS = pathGdalwarpS;
         this.outCode = outCode;
-        this.shpfileProvince = shpfileProvince;
+        this.shpfilePath = shpfilePath;
+        this.lablePath = lablePath;
+        this.outprePath = outprePath;
+        this.pathGdalwarpS = pathGdalwarpS;
     }
 
     public boolean
@@ -84,44 +80,16 @@ public class ClassifyA implements java.lang.Cloneable, java.io.Serializable
             {
                 return false;
             }
+            if(fileDate != _r.fileDate)
+            {
+                if(fileDate == null || _r.fileDate == null || !fileDate.equals(_r.fileDate))
+                {
+                    return false;
+                }
+            }
             if(imagePath != _r.imagePath)
             {
                 if(imagePath == null || _r.imagePath == null || !imagePath.equals(_r.imagePath))
-                {
-                    return false;
-                }
-            }
-            if(outPathTif != _r.outPathTif)
-            {
-                if(outPathTif == null || _r.outPathTif == null || !outPathTif.equals(_r.outPathTif))
-                {
-                    return false;
-                }
-            }
-            if(outPathShp != _r.outPathShp)
-            {
-                if(outPathShp == null || _r.outPathShp == null || !outPathShp.equals(_r.outPathShp))
-                {
-                    return false;
-                }
-            }
-            if(lablePath != _r.lablePath)
-            {
-                if(lablePath == null || _r.lablePath == null || !lablePath.equals(_r.lablePath))
-                {
-                    return false;
-                }
-            }
-            if(roiPath != _r.roiPath)
-            {
-                if(roiPath == null || _r.roiPath == null || !roiPath.equals(_r.roiPath))
-                {
-                    return false;
-                }
-            }
-            if(pathGdalwarpS != _r.pathGdalwarpS)
-            {
-                if(pathGdalwarpS == null || _r.pathGdalwarpS == null || !pathGdalwarpS.equals(_r.pathGdalwarpS))
                 {
                     return false;
                 }
@@ -133,9 +101,30 @@ public class ClassifyA implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(shpfileProvince != _r.shpfileProvince)
+            if(shpfilePath != _r.shpfilePath)
             {
-                if(shpfileProvince == null || _r.shpfileProvince == null || !shpfileProvince.equals(_r.shpfileProvince))
+                if(shpfilePath == null || _r.shpfilePath == null || !shpfilePath.equals(_r.shpfilePath))
+                {
+                    return false;
+                }
+            }
+            if(lablePath != _r.lablePath)
+            {
+                if(lablePath == null || _r.lablePath == null || !lablePath.equals(_r.lablePath))
+                {
+                    return false;
+                }
+            }
+            if(outprePath != _r.outprePath)
+            {
+                if(outprePath == null || _r.outprePath == null || !outprePath.equals(_r.outprePath))
+                {
+                    return false;
+                }
+            }
+            if(pathGdalwarpS != _r.pathGdalwarpS)
+            {
+                if(pathGdalwarpS == null || _r.pathGdalwarpS == null || !pathGdalwarpS.equals(_r.pathGdalwarpS))
                 {
                     return false;
                 }
@@ -153,14 +142,13 @@ public class ClassifyA implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::ClassifyA");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
+        __h = IceInternal.HashUtil.hashAdd(__h, fileDate);
         __h = IceInternal.HashUtil.hashAdd(__h, imagePath);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathTif);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathShp);
-        __h = IceInternal.HashUtil.hashAdd(__h, lablePath);
-        __h = IceInternal.HashUtil.hashAdd(__h, roiPath);
-        __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
         __h = IceInternal.HashUtil.hashAdd(__h, outCode);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileProvince);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfilePath);
+        __h = IceInternal.HashUtil.hashAdd(__h, lablePath);
+        __h = IceInternal.HashUtil.hashAdd(__h, outprePath);
+        __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
         return __h;
     }
 
@@ -183,28 +171,26 @@ public class ClassifyA implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeInt(id);
+        __os.writeString(fileDate);
         __os.writeString(imagePath);
-        __os.writeString(outPathTif);
-        __os.writeString(outPathShp);
-        __os.writeString(lablePath);
-        __os.writeString(roiPath);
-        __os.writeString(pathGdalwarpS);
         __os.writeString(outCode);
-        __os.writeString(shpfileProvince);
+        __os.writeString(shpfilePath);
+        __os.writeString(lablePath);
+        __os.writeString(outprePath);
+        __os.writeString(pathGdalwarpS);
     }
 
     public void
     __read(IceInternal.BasicStream __is)
     {
         id = __is.readInt();
+        fileDate = __is.readString();
         imagePath = __is.readString();
-        outPathTif = __is.readString();
-        outPathShp = __is.readString();
-        lablePath = __is.readString();
-        roiPath = __is.readString();
-        pathGdalwarpS = __is.readString();
         outCode = __is.readString();
-        shpfileProvince = __is.readString();
+        shpfilePath = __is.readString();
+        lablePath = __is.readString();
+        outprePath = __is.readString();
+        pathGdalwarpS = __is.readString();
     }
 
     static public void
@@ -233,5 +219,5 @@ public class ClassifyA implements java.lang.Cloneable, java.io.Serializable
     
     private static final ClassifyA __nullMarshalValue = new ClassifyA();
 
-    public static final long serialVersionUID = 7063235062105169820L;
+    public static final long serialVersionUID = 7412275897172157811L;
 }

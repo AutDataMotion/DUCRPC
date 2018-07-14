@@ -24,61 +24,45 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
+    public String fileDate;
+
     public String pathNdvi;
-
-    public String imageLanduse;
-
-    public String pathStatistics;
-
-    public String outPathClip;
-
-    public String outPathMusk;
-
-    public String pathGdalwarpS;
 
     public String outCode;
 
-    public String outPathTif;
+    public String pathStatistics;
 
-    public String outPathShp;
+    public String imageLanduse;
 
-    public String shpfileProvince;
+    public String outPath;
 
-    public String shpfileCounty;
+    public String shpfilePath;
 
-    public String shpfileTown;
+    public String pathGdalwarpS;
 
     public Yield()
     {
+        fileDate = "";
         pathNdvi = "";
-        imageLanduse = "";
-        pathStatistics = "";
-        outPathClip = "";
-        outPathMusk = "";
-        pathGdalwarpS = "";
         outCode = "";
-        outPathTif = "";
-        outPathShp = "";
-        shpfileProvince = "";
-        shpfileCounty = "";
-        shpfileTown = "";
+        pathStatistics = "";
+        imageLanduse = "";
+        outPath = "";
+        shpfilePath = "";
+        pathGdalwarpS = "";
     }
 
-    public Yield(int id, String pathNdvi, String imageLanduse, String pathStatistics, String outPathClip, String outPathMusk, String pathGdalwarpS, String outCode, String outPathTif, String outPathShp, String shpfileProvince, String shpfileCounty, String shpfileTown)
+    public Yield(int id, String fileDate, String pathNdvi, String outCode, String pathStatistics, String imageLanduse, String outPath, String shpfilePath, String pathGdalwarpS)
     {
         this.id = id;
+        this.fileDate = fileDate;
         this.pathNdvi = pathNdvi;
-        this.imageLanduse = imageLanduse;
-        this.pathStatistics = pathStatistics;
-        this.outPathClip = outPathClip;
-        this.outPathMusk = outPathMusk;
-        this.pathGdalwarpS = pathGdalwarpS;
         this.outCode = outCode;
-        this.outPathTif = outPathTif;
-        this.outPathShp = outPathShp;
-        this.shpfileProvince = shpfileProvince;
-        this.shpfileCounty = shpfileCounty;
-        this.shpfileTown = shpfileTown;
+        this.pathStatistics = pathStatistics;
+        this.imageLanduse = imageLanduse;
+        this.outPath = outPath;
+        this.shpfilePath = shpfilePath;
+        this.pathGdalwarpS = pathGdalwarpS;
     }
 
     public boolean
@@ -100,44 +84,16 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
             {
                 return false;
             }
+            if(fileDate != _r.fileDate)
+            {
+                if(fileDate == null || _r.fileDate == null || !fileDate.equals(_r.fileDate))
+                {
+                    return false;
+                }
+            }
             if(pathNdvi != _r.pathNdvi)
             {
                 if(pathNdvi == null || _r.pathNdvi == null || !pathNdvi.equals(_r.pathNdvi))
-                {
-                    return false;
-                }
-            }
-            if(imageLanduse != _r.imageLanduse)
-            {
-                if(imageLanduse == null || _r.imageLanduse == null || !imageLanduse.equals(_r.imageLanduse))
-                {
-                    return false;
-                }
-            }
-            if(pathStatistics != _r.pathStatistics)
-            {
-                if(pathStatistics == null || _r.pathStatistics == null || !pathStatistics.equals(_r.pathStatistics))
-                {
-                    return false;
-                }
-            }
-            if(outPathClip != _r.outPathClip)
-            {
-                if(outPathClip == null || _r.outPathClip == null || !outPathClip.equals(_r.outPathClip))
-                {
-                    return false;
-                }
-            }
-            if(outPathMusk != _r.outPathMusk)
-            {
-                if(outPathMusk == null || _r.outPathMusk == null || !outPathMusk.equals(_r.outPathMusk))
-                {
-                    return false;
-                }
-            }
-            if(pathGdalwarpS != _r.pathGdalwarpS)
-            {
-                if(pathGdalwarpS == null || _r.pathGdalwarpS == null || !pathGdalwarpS.equals(_r.pathGdalwarpS))
                 {
                     return false;
                 }
@@ -149,37 +105,37 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(outPathTif != _r.outPathTif)
+            if(pathStatistics != _r.pathStatistics)
             {
-                if(outPathTif == null || _r.outPathTif == null || !outPathTif.equals(_r.outPathTif))
+                if(pathStatistics == null || _r.pathStatistics == null || !pathStatistics.equals(_r.pathStatistics))
                 {
                     return false;
                 }
             }
-            if(outPathShp != _r.outPathShp)
+            if(imageLanduse != _r.imageLanduse)
             {
-                if(outPathShp == null || _r.outPathShp == null || !outPathShp.equals(_r.outPathShp))
+                if(imageLanduse == null || _r.imageLanduse == null || !imageLanduse.equals(_r.imageLanduse))
                 {
                     return false;
                 }
             }
-            if(shpfileProvince != _r.shpfileProvince)
+            if(outPath != _r.outPath)
             {
-                if(shpfileProvince == null || _r.shpfileProvince == null || !shpfileProvince.equals(_r.shpfileProvince))
+                if(outPath == null || _r.outPath == null || !outPath.equals(_r.outPath))
                 {
                     return false;
                 }
             }
-            if(shpfileCounty != _r.shpfileCounty)
+            if(shpfilePath != _r.shpfilePath)
             {
-                if(shpfileCounty == null || _r.shpfileCounty == null || !shpfileCounty.equals(_r.shpfileCounty))
+                if(shpfilePath == null || _r.shpfilePath == null || !shpfilePath.equals(_r.shpfilePath))
                 {
                     return false;
                 }
             }
-            if(shpfileTown != _r.shpfileTown)
+            if(pathGdalwarpS != _r.pathGdalwarpS)
             {
-                if(shpfileTown == null || _r.shpfileTown == null || !shpfileTown.equals(_r.shpfileTown))
+                if(pathGdalwarpS == null || _r.pathGdalwarpS == null || !pathGdalwarpS.equals(_r.pathGdalwarpS))
                 {
                     return false;
                 }
@@ -197,18 +153,14 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::Yield");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
+        __h = IceInternal.HashUtil.hashAdd(__h, fileDate);
         __h = IceInternal.HashUtil.hashAdd(__h, pathNdvi);
-        __h = IceInternal.HashUtil.hashAdd(__h, imageLanduse);
-        __h = IceInternal.HashUtil.hashAdd(__h, pathStatistics);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathClip);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathMusk);
-        __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
         __h = IceInternal.HashUtil.hashAdd(__h, outCode);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathTif);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPathShp);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileProvince);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileCounty);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileTown);
+        __h = IceInternal.HashUtil.hashAdd(__h, pathStatistics);
+        __h = IceInternal.HashUtil.hashAdd(__h, imageLanduse);
+        __h = IceInternal.HashUtil.hashAdd(__h, outPath);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfilePath);
+        __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
         return __h;
     }
 
@@ -231,36 +183,28 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeInt(id);
+        __os.writeString(fileDate);
         __os.writeString(pathNdvi);
-        __os.writeString(imageLanduse);
-        __os.writeString(pathStatistics);
-        __os.writeString(outPathClip);
-        __os.writeString(outPathMusk);
-        __os.writeString(pathGdalwarpS);
         __os.writeString(outCode);
-        __os.writeString(outPathTif);
-        __os.writeString(outPathShp);
-        __os.writeString(shpfileProvince);
-        __os.writeString(shpfileCounty);
-        __os.writeString(shpfileTown);
+        __os.writeString(pathStatistics);
+        __os.writeString(imageLanduse);
+        __os.writeString(outPath);
+        __os.writeString(shpfilePath);
+        __os.writeString(pathGdalwarpS);
     }
 
     public void
     __read(IceInternal.BasicStream __is)
     {
         id = __is.readInt();
+        fileDate = __is.readString();
         pathNdvi = __is.readString();
-        imageLanduse = __is.readString();
-        pathStatistics = __is.readString();
-        outPathClip = __is.readString();
-        outPathMusk = __is.readString();
-        pathGdalwarpS = __is.readString();
         outCode = __is.readString();
-        outPathTif = __is.readString();
-        outPathShp = __is.readString();
-        shpfileProvince = __is.readString();
-        shpfileCounty = __is.readString();
-        shpfileTown = __is.readString();
+        pathStatistics = __is.readString();
+        imageLanduse = __is.readString();
+        outPath = __is.readString();
+        shpfilePath = __is.readString();
+        pathGdalwarpS = __is.readString();
     }
 
     static public void
@@ -289,5 +233,5 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
     
     private static final Yield __nullMarshalValue = new Yield();
 
-    public static final long serialVersionUID = 8993452165301273405L;
+    public static final long serialVersionUID = 3975770070599642469L;
 }
