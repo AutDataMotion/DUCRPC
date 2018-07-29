@@ -24,39 +24,49 @@ public class Growth implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
-    public String imgPath;
+    public String fileDate;
 
-    public int begYr;
+    public String pathNdvi;
 
-    public int endYr;
+    public String imageLanduse;
 
-    public float trVal1;
+    public String shpfilePath;
 
-    public float trVal2;
+    public String outPath;
 
-    public float trVal3;
+    public String pathGdalwarpS;
 
-    public float trVal4;
+    public float threshold1;
 
-    public String outFile;
+    public float threshold2;
+
+    public float threshold3;
+
+    public float threshold4;
 
     public Growth()
     {
-        imgPath = "";
-        outFile = "";
+        fileDate = "";
+        pathNdvi = "";
+        imageLanduse = "";
+        shpfilePath = "";
+        outPath = "";
+        pathGdalwarpS = "";
     }
 
-    public Growth(int id, String imgPath, int begYr, int endYr, float trVal1, float trVal2, float trVal3, float trVal4, String outFile)
+    public Growth(int id, String fileDate, String pathNdvi, String imageLanduse, String shpfilePath, String outPath, String pathGdalwarpS, float threshold1, float threshold2, float threshold3, float threshold4)
     {
         this.id = id;
-        this.imgPath = imgPath;
-        this.begYr = begYr;
-        this.endYr = endYr;
-        this.trVal1 = trVal1;
-        this.trVal2 = trVal2;
-        this.trVal3 = trVal3;
-        this.trVal4 = trVal4;
-        this.outFile = outFile;
+        this.fileDate = fileDate;
+        this.pathNdvi = pathNdvi;
+        this.imageLanduse = imageLanduse;
+        this.shpfilePath = shpfilePath;
+        this.outPath = outPath;
+        this.pathGdalwarpS = pathGdalwarpS;
+        this.threshold1 = threshold1;
+        this.threshold2 = threshold2;
+        this.threshold3 = threshold3;
+        this.threshold4 = threshold4;
     }
 
     public boolean
@@ -78,43 +88,63 @@ public class Growth implements java.lang.Cloneable, java.io.Serializable
             {
                 return false;
             }
-            if(imgPath != _r.imgPath)
+            if(fileDate != _r.fileDate)
             {
-                if(imgPath == null || _r.imgPath == null || !imgPath.equals(_r.imgPath))
+                if(fileDate == null || _r.fileDate == null || !fileDate.equals(_r.fileDate))
                 {
                     return false;
                 }
             }
-            if(begYr != _r.begYr)
+            if(pathNdvi != _r.pathNdvi)
             {
-                return false;
-            }
-            if(endYr != _r.endYr)
-            {
-                return false;
-            }
-            if(trVal1 != _r.trVal1)
-            {
-                return false;
-            }
-            if(trVal2 != _r.trVal2)
-            {
-                return false;
-            }
-            if(trVal3 != _r.trVal3)
-            {
-                return false;
-            }
-            if(trVal4 != _r.trVal4)
-            {
-                return false;
-            }
-            if(outFile != _r.outFile)
-            {
-                if(outFile == null || _r.outFile == null || !outFile.equals(_r.outFile))
+                if(pathNdvi == null || _r.pathNdvi == null || !pathNdvi.equals(_r.pathNdvi))
                 {
                     return false;
                 }
+            }
+            if(imageLanduse != _r.imageLanduse)
+            {
+                if(imageLanduse == null || _r.imageLanduse == null || !imageLanduse.equals(_r.imageLanduse))
+                {
+                    return false;
+                }
+            }
+            if(shpfilePath != _r.shpfilePath)
+            {
+                if(shpfilePath == null || _r.shpfilePath == null || !shpfilePath.equals(_r.shpfilePath))
+                {
+                    return false;
+                }
+            }
+            if(outPath != _r.outPath)
+            {
+                if(outPath == null || _r.outPath == null || !outPath.equals(_r.outPath))
+                {
+                    return false;
+                }
+            }
+            if(pathGdalwarpS != _r.pathGdalwarpS)
+            {
+                if(pathGdalwarpS == null || _r.pathGdalwarpS == null || !pathGdalwarpS.equals(_r.pathGdalwarpS))
+                {
+                    return false;
+                }
+            }
+            if(threshold1 != _r.threshold1)
+            {
+                return false;
+            }
+            if(threshold2 != _r.threshold2)
+            {
+                return false;
+            }
+            if(threshold3 != _r.threshold3)
+            {
+                return false;
+            }
+            if(threshold4 != _r.threshold4)
+            {
+                return false;
             }
 
             return true;
@@ -129,14 +159,16 @@ public class Growth implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::Growth");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
-        __h = IceInternal.HashUtil.hashAdd(__h, imgPath);
-        __h = IceInternal.HashUtil.hashAdd(__h, begYr);
-        __h = IceInternal.HashUtil.hashAdd(__h, endYr);
-        __h = IceInternal.HashUtil.hashAdd(__h, trVal1);
-        __h = IceInternal.HashUtil.hashAdd(__h, trVal2);
-        __h = IceInternal.HashUtil.hashAdd(__h, trVal3);
-        __h = IceInternal.HashUtil.hashAdd(__h, trVal4);
-        __h = IceInternal.HashUtil.hashAdd(__h, outFile);
+        __h = IceInternal.HashUtil.hashAdd(__h, fileDate);
+        __h = IceInternal.HashUtil.hashAdd(__h, pathNdvi);
+        __h = IceInternal.HashUtil.hashAdd(__h, imageLanduse);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfilePath);
+        __h = IceInternal.HashUtil.hashAdd(__h, outPath);
+        __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
+        __h = IceInternal.HashUtil.hashAdd(__h, threshold1);
+        __h = IceInternal.HashUtil.hashAdd(__h, threshold2);
+        __h = IceInternal.HashUtil.hashAdd(__h, threshold3);
+        __h = IceInternal.HashUtil.hashAdd(__h, threshold4);
         return __h;
     }
 
@@ -159,28 +191,32 @@ public class Growth implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeInt(id);
-        __os.writeString(imgPath);
-        __os.writeInt(begYr);
-        __os.writeInt(endYr);
-        __os.writeFloat(trVal1);
-        __os.writeFloat(trVal2);
-        __os.writeFloat(trVal3);
-        __os.writeFloat(trVal4);
-        __os.writeString(outFile);
+        __os.writeString(fileDate);
+        __os.writeString(pathNdvi);
+        __os.writeString(imageLanduse);
+        __os.writeString(shpfilePath);
+        __os.writeString(outPath);
+        __os.writeString(pathGdalwarpS);
+        __os.writeFloat(threshold1);
+        __os.writeFloat(threshold2);
+        __os.writeFloat(threshold3);
+        __os.writeFloat(threshold4);
     }
 
     public void
     __read(IceInternal.BasicStream __is)
     {
         id = __is.readInt();
-        imgPath = __is.readString();
-        begYr = __is.readInt();
-        endYr = __is.readInt();
-        trVal1 = __is.readFloat();
-        trVal2 = __is.readFloat();
-        trVal3 = __is.readFloat();
-        trVal4 = __is.readFloat();
-        outFile = __is.readString();
+        fileDate = __is.readString();
+        pathNdvi = __is.readString();
+        imageLanduse = __is.readString();
+        shpfilePath = __is.readString();
+        outPath = __is.readString();
+        pathGdalwarpS = __is.readString();
+        threshold1 = __is.readFloat();
+        threshold2 = __is.readFloat();
+        threshold3 = __is.readFloat();
+        threshold4 = __is.readFloat();
     }
 
     static public void
@@ -209,5 +245,5 @@ public class Growth implements java.lang.Cloneable, java.io.Serializable
     
     private static final Growth __nullMarshalValue = new Growth();
 
-    public static final long serialVersionUID = 847050337L;
+    public static final long serialVersionUID = -1965669818L;
 }

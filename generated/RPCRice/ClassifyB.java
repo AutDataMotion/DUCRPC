@@ -24,25 +24,33 @@ public class ClassifyB implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
+    public String fileDate;
+
+    public String outCode;
+
     public String modClassShp;
 
-    public String shpfileCounty;
+    public String shpfilePath;
 
-    public String shpfileTown;
+    public String outPath;
 
     public ClassifyB()
     {
+        fileDate = "";
+        outCode = "";
         modClassShp = "";
-        shpfileCounty = "";
-        shpfileTown = "";
+        shpfilePath = "";
+        outPath = "";
     }
 
-    public ClassifyB(int id, String modClassShp, String shpfileCounty, String shpfileTown)
+    public ClassifyB(int id, String fileDate, String outCode, String modClassShp, String shpfilePath, String outPath)
     {
         this.id = id;
+        this.fileDate = fileDate;
+        this.outCode = outCode;
         this.modClassShp = modClassShp;
-        this.shpfileCounty = shpfileCounty;
-        this.shpfileTown = shpfileTown;
+        this.shpfilePath = shpfilePath;
+        this.outPath = outPath;
     }
 
     public boolean
@@ -64,6 +72,20 @@ public class ClassifyB implements java.lang.Cloneable, java.io.Serializable
             {
                 return false;
             }
+            if(fileDate != _r.fileDate)
+            {
+                if(fileDate == null || _r.fileDate == null || !fileDate.equals(_r.fileDate))
+                {
+                    return false;
+                }
+            }
+            if(outCode != _r.outCode)
+            {
+                if(outCode == null || _r.outCode == null || !outCode.equals(_r.outCode))
+                {
+                    return false;
+                }
+            }
             if(modClassShp != _r.modClassShp)
             {
                 if(modClassShp == null || _r.modClassShp == null || !modClassShp.equals(_r.modClassShp))
@@ -71,16 +93,16 @@ public class ClassifyB implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(shpfileCounty != _r.shpfileCounty)
+            if(shpfilePath != _r.shpfilePath)
             {
-                if(shpfileCounty == null || _r.shpfileCounty == null || !shpfileCounty.equals(_r.shpfileCounty))
+                if(shpfilePath == null || _r.shpfilePath == null || !shpfilePath.equals(_r.shpfilePath))
                 {
                     return false;
                 }
             }
-            if(shpfileTown != _r.shpfileTown)
+            if(outPath != _r.outPath)
             {
-                if(shpfileTown == null || _r.shpfileTown == null || !shpfileTown.equals(_r.shpfileTown))
+                if(outPath == null || _r.outPath == null || !outPath.equals(_r.outPath))
                 {
                     return false;
                 }
@@ -98,9 +120,11 @@ public class ClassifyB implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::ClassifyB");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
+        __h = IceInternal.HashUtil.hashAdd(__h, fileDate);
+        __h = IceInternal.HashUtil.hashAdd(__h, outCode);
         __h = IceInternal.HashUtil.hashAdd(__h, modClassShp);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileCounty);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfileTown);
+        __h = IceInternal.HashUtil.hashAdd(__h, shpfilePath);
+        __h = IceInternal.HashUtil.hashAdd(__h, outPath);
         return __h;
     }
 
@@ -123,18 +147,22 @@ public class ClassifyB implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeInt(id);
+        __os.writeString(fileDate);
+        __os.writeString(outCode);
         __os.writeString(modClassShp);
-        __os.writeString(shpfileCounty);
-        __os.writeString(shpfileTown);
+        __os.writeString(shpfilePath);
+        __os.writeString(outPath);
     }
 
     public void
     __read(IceInternal.BasicStream __is)
     {
         id = __is.readInt();
+        fileDate = __is.readString();
+        outCode = __is.readString();
         modClassShp = __is.readString();
-        shpfileCounty = __is.readString();
-        shpfileTown = __is.readString();
+        shpfilePath = __is.readString();
+        outPath = __is.readString();
     }
 
     static public void
@@ -163,5 +191,5 @@ public class ClassifyB implements java.lang.Cloneable, java.io.Serializable
     
     private static final ClassifyB __nullMarshalValue = new ClassifyB();
 
-    public static final long serialVersionUID = 2123784155L;
+    public static final long serialVersionUID = 1774265937L;
 }
