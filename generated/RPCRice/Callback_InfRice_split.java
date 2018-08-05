@@ -20,16 +20,11 @@
 
 package RPCRice;
 
-public final class ClassifyHolder extends Ice.Holder<Classify>
+public abstract class Callback_InfRice_split
+    extends IceInternal.TwowayCallback implements Ice.TwowayCallbackArg1<String>
 {
-    public
-    ClassifyHolder()
+    public final void __completed(Ice.AsyncResult __result)
     {
-    }
-
-    public
-    ClassifyHolder(Classify value)
-    {
-        super(value);
+        InfRicePrxHelper.__split_completed(this, __result);
     }
 }

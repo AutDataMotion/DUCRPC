@@ -20,49 +20,37 @@
 
 package RPCRice;
 
-public class Yield implements java.lang.Cloneable, java.io.Serializable
+public class ClassifyB implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
     public String fileDate;
 
-    public String pathNdvi;
-
     public String outCode;
 
-    public String pathStatistics;
-
-    public String imageLanduse;
-
-    public String outPath;
+    public String modClassShp;
 
     public String shpfilePath;
 
-    public String pathGdalwarpS;
+    public String outPath;
 
-    public Yield()
+    public ClassifyB()
     {
         fileDate = "";
-        pathNdvi = "";
         outCode = "";
-        pathStatistics = "";
-        imageLanduse = "";
-        outPath = "";
+        modClassShp = "";
         shpfilePath = "";
-        pathGdalwarpS = "";
+        outPath = "";
     }
 
-    public Yield(int id, String fileDate, String pathNdvi, String outCode, String pathStatistics, String imageLanduse, String outPath, String shpfilePath, String pathGdalwarpS)
+    public ClassifyB(int id, String fileDate, String outCode, String modClassShp, String shpfilePath, String outPath)
     {
         this.id = id;
         this.fileDate = fileDate;
-        this.pathNdvi = pathNdvi;
         this.outCode = outCode;
-        this.pathStatistics = pathStatistics;
-        this.imageLanduse = imageLanduse;
-        this.outPath = outPath;
+        this.modClassShp = modClassShp;
         this.shpfilePath = shpfilePath;
-        this.pathGdalwarpS = pathGdalwarpS;
+        this.outPath = outPath;
     }
 
     public boolean
@@ -72,10 +60,10 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         {
             return true;
         }
-        Yield _r = null;
-        if(rhs instanceof Yield)
+        ClassifyB _r = null;
+        if(rhs instanceof ClassifyB)
         {
-            _r = (Yield)rhs;
+            _r = (ClassifyB)rhs;
         }
 
         if(_r != null)
@@ -91,13 +79,6 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(pathNdvi != _r.pathNdvi)
-            {
-                if(pathNdvi == null || _r.pathNdvi == null || !pathNdvi.equals(_r.pathNdvi))
-                {
-                    return false;
-                }
-            }
             if(outCode != _r.outCode)
             {
                 if(outCode == null || _r.outCode == null || !outCode.equals(_r.outCode))
@@ -105,23 +86,9 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(pathStatistics != _r.pathStatistics)
+            if(modClassShp != _r.modClassShp)
             {
-                if(pathStatistics == null || _r.pathStatistics == null || !pathStatistics.equals(_r.pathStatistics))
-                {
-                    return false;
-                }
-            }
-            if(imageLanduse != _r.imageLanduse)
-            {
-                if(imageLanduse == null || _r.imageLanduse == null || !imageLanduse.equals(_r.imageLanduse))
-                {
-                    return false;
-                }
-            }
-            if(outPath != _r.outPath)
-            {
-                if(outPath == null || _r.outPath == null || !outPath.equals(_r.outPath))
+                if(modClassShp == null || _r.modClassShp == null || !modClassShp.equals(_r.modClassShp))
                 {
                     return false;
                 }
@@ -133,9 +100,9 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(pathGdalwarpS != _r.pathGdalwarpS)
+            if(outPath != _r.outPath)
             {
-                if(pathGdalwarpS == null || _r.pathGdalwarpS == null || !pathGdalwarpS.equals(_r.pathGdalwarpS))
+                if(outPath == null || _r.outPath == null || !outPath.equals(_r.outPath))
                 {
                     return false;
                 }
@@ -151,26 +118,23 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
     hashCode()
     {
         int __h = 5381;
-        __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::Yield");
+        __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::ClassifyB");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
         __h = IceInternal.HashUtil.hashAdd(__h, fileDate);
-        __h = IceInternal.HashUtil.hashAdd(__h, pathNdvi);
         __h = IceInternal.HashUtil.hashAdd(__h, outCode);
-        __h = IceInternal.HashUtil.hashAdd(__h, pathStatistics);
-        __h = IceInternal.HashUtil.hashAdd(__h, imageLanduse);
-        __h = IceInternal.HashUtil.hashAdd(__h, outPath);
+        __h = IceInternal.HashUtil.hashAdd(__h, modClassShp);
         __h = IceInternal.HashUtil.hashAdd(__h, shpfilePath);
-        __h = IceInternal.HashUtil.hashAdd(__h, pathGdalwarpS);
+        __h = IceInternal.HashUtil.hashAdd(__h, outPath);
         return __h;
     }
 
-    public Yield
+    public ClassifyB
     clone()
     {
-        Yield c = null;
+        ClassifyB c = null;
         try
         {
-            c = (Yield)super.clone();
+            c = (ClassifyB)super.clone();
         }
         catch(CloneNotSupportedException ex)
         {
@@ -184,13 +148,10 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
     {
         __os.writeInt(id);
         __os.writeString(fileDate);
-        __os.writeString(pathNdvi);
         __os.writeString(outCode);
-        __os.writeString(pathStatistics);
-        __os.writeString(imageLanduse);
-        __os.writeString(outPath);
+        __os.writeString(modClassShp);
         __os.writeString(shpfilePath);
-        __os.writeString(pathGdalwarpS);
+        __os.writeString(outPath);
     }
 
     public void
@@ -198,17 +159,14 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
     {
         id = __is.readInt();
         fileDate = __is.readString();
-        pathNdvi = __is.readString();
         outCode = __is.readString();
-        pathStatistics = __is.readString();
-        imageLanduse = __is.readString();
-        outPath = __is.readString();
+        modClassShp = __is.readString();
         shpfilePath = __is.readString();
-        pathGdalwarpS = __is.readString();
+        outPath = __is.readString();
     }
 
     static public void
-    __write(IceInternal.BasicStream __os, Yield __v)
+    __write(IceInternal.BasicStream __os, ClassifyB __v)
     {
         if(__v == null)
         {
@@ -220,18 +178,18 @@ public class Yield implements java.lang.Cloneable, java.io.Serializable
         }
     }
 
-    static public Yield
-    __read(IceInternal.BasicStream __is, Yield __v)
+    static public ClassifyB
+    __read(IceInternal.BasicStream __is, ClassifyB __v)
     {
         if(__v == null)
         {
-             __v = new Yield();
+             __v = new ClassifyB();
         }
         __v.__read(__is);
         return __v;
     }
     
-    private static final Yield __nullMarshalValue = new Yield();
+    private static final ClassifyB __nullMarshalValue = new ClassifyB();
 
-    public static final long serialVersionUID = -1900499611L;
+    public static final long serialVersionUID = 1774265937L;
 }

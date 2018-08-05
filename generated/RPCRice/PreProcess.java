@@ -24,6 +24,8 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
+    public String type;
+
     public String h26v06;
 
     public String h27v06;
@@ -42,6 +44,7 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
 
     public PreProcess()
     {
+        type = "";
         h26v06 = "";
         h27v06 = "";
         h27v07 = "";
@@ -52,9 +55,10 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
         outFile = "";
     }
 
-    public PreProcess(int id, String h26v06, String h27v06, String h27v07, String h27v08, String h28v07, String h28v08, String shpfile, String outFile)
+    public PreProcess(int id, String type, String h26v06, String h27v06, String h27v07, String h27v08, String h28v07, String h28v08, String shpfile, String outFile)
     {
         this.id = id;
+        this.type = type;
         this.h26v06 = h26v06;
         this.h27v06 = h27v06;
         this.h27v07 = h27v07;
@@ -83,6 +87,13 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
             if(id != _r.id)
             {
                 return false;
+            }
+            if(type != _r.type)
+            {
+                if(type == null || _r.type == null || !type.equals(_r.type))
+                {
+                    return false;
+                }
             }
             if(h26v06 != _r.h26v06)
             {
@@ -153,6 +164,7 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::PreProcess");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
+        __h = IceInternal.HashUtil.hashAdd(__h, type);
         __h = IceInternal.HashUtil.hashAdd(__h, h26v06);
         __h = IceInternal.HashUtil.hashAdd(__h, h27v06);
         __h = IceInternal.HashUtil.hashAdd(__h, h27v07);
@@ -183,6 +195,7 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeInt(id);
+        __os.writeString(type);
         __os.writeString(h26v06);
         __os.writeString(h27v06);
         __os.writeString(h27v07);
@@ -197,6 +210,7 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
     __read(IceInternal.BasicStream __is)
     {
         id = __is.readInt();
+        type = __is.readString();
         h26v06 = __is.readString();
         h27v06 = __is.readString();
         h27v07 = __is.readString();
@@ -233,5 +247,5 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
     
     private static final PreProcess __nullMarshalValue = new PreProcess();
 
-    public static final long serialVersionUID = 688194837L;
+    public static final long serialVersionUID = -1633129366L;
 }

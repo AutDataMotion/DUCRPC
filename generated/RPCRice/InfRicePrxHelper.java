@@ -747,53 +747,53 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
 
     private static final String __maxlikehood_name = "maxlikehood";
 
-    public String maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    public String maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
     {
         return maxlikehood(inputclass, mapArgs, null, false);
     }
 
-    public String maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
+    public String maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
     {
         return maxlikehood(inputclass, mapArgs, __ctx, true);
     }
 
-    private String maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    private String maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, boolean __explicitCtx)
     {
         __checkTwowayOnly(__maxlikehood_name);
         return end_maxlikehood(begin_maxlikehood(inputclass, mapArgs, __ctx, __explicitCtx, true, null));
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
     {
         return begin_maxlikehood(inputclass, mapArgs, null, false, false, null);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
     {
         return begin_maxlikehood(inputclass, mapArgs, __ctx, true, false, null);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Callback __cb)
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Callback __cb)
     {
         return begin_maxlikehood(inputclass, mapArgs, null, false, false, __cb);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Ice.Callback __cb)
     {
         return begin_maxlikehood(inputclass, mapArgs, __ctx, true, false, __cb);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Callback_InfRice_maxlikehood __cb)
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Callback_InfRice_maxlikehood __cb)
     {
         return begin_maxlikehood(inputclass, mapArgs, null, false, false, __cb);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Callback_InfRice_maxlikehood __cb)
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Callback_InfRice_maxlikehood __cb)
     {
         return begin_maxlikehood(inputclass, mapArgs, __ctx, true, false, __cb);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, 
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, 
                                              java.util.Map<java.lang.String, java.lang.String> mapArgs, 
                                              IceInternal.Functional_GenericCallback1<String> __responseCb, 
                                              IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
@@ -801,7 +801,7 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
         return begin_maxlikehood(inputclass, mapArgs, null, false, false, __responseCb, __exceptionCb, null);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, 
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, 
                                              java.util.Map<java.lang.String, java.lang.String> mapArgs, 
                                              IceInternal.Functional_GenericCallback1<String> __responseCb, 
                                              IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
@@ -810,7 +810,7 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
         return begin_maxlikehood(inputclass, mapArgs, null, false, false, __responseCb, __exceptionCb, __sentCb);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, 
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, 
                                              java.util.Map<java.lang.String, java.lang.String> mapArgs, 
                                              java.util.Map<String, String> __ctx, 
                                              IceInternal.Functional_GenericCallback1<String> __responseCb, 
@@ -819,7 +819,7 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
         return begin_maxlikehood(inputclass, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, null);
     }
 
-    public Ice.AsyncResult begin_maxlikehood(Classify inputclass, 
+    public Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, 
                                              java.util.Map<java.lang.String, java.lang.String> mapArgs, 
                                              java.util.Map<String, String> __ctx, 
                                              IceInternal.Functional_GenericCallback1<String> __responseCb, 
@@ -829,7 +829,7 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
         return begin_maxlikehood(inputclass, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
     }
 
-    private Ice.AsyncResult begin_maxlikehood(Classify inputclass, 
+    private Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, 
                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
                                               java.util.Map<String, String> __ctx, 
                                               boolean __explicitCtx, 
@@ -848,7 +848,7 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
                                      });
     }
 
-    private Ice.AsyncResult begin_maxlikehood(Classify inputclass, 
+    private Ice.AsyncResult begin_maxlikehood(ClassifyA inputclass, 
                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
                                               java.util.Map<String, String> __ctx, 
                                               boolean __explicitCtx, 
@@ -861,7 +861,7 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
         {
             __result.prepare(__maxlikehood_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
             IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
-            Classify.__write(__os, inputclass);
+            ClassifyA.__write(__os, inputclass);
             DirArgsHelper.write(__os, mapArgs);
             __result.endWriteParams();
             __result.invoke();
@@ -911,6 +911,186 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
         try
         {
             __ret = __proxy.end_maxlikehood(__result);
+        }
+        catch(Ice.LocalException __ex)
+        {
+            __cb.exception(__ex);
+            return;
+        }
+        catch(Ice.SystemException __ex)
+        {
+            __cb.exception(__ex);
+            return;
+        }
+        __cb.response(__ret);
+    }
+
+    private static final String __split_name = "split";
+
+    public String split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    {
+        return split(inputclass, mapArgs, null, false);
+    }
+
+    public String split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
+    {
+        return split(inputclass, mapArgs, __ctx, true);
+    }
+
+    private String split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    {
+        __checkTwowayOnly(__split_name);
+        return end_split(begin_split(inputclass, mapArgs, __ctx, __explicitCtx, true, null));
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    {
+        return begin_split(inputclass, mapArgs, null, false, false, null);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
+    {
+        return begin_split(inputclass, mapArgs, __ctx, true, false, null);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Callback __cb)
+    {
+        return begin_split(inputclass, mapArgs, null, false, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    {
+        return begin_split(inputclass, mapArgs, __ctx, true, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, Callback_InfRice_split __cb)
+    {
+        return begin_split(inputclass, mapArgs, null, false, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Callback_InfRice_split __cb)
+    {
+        return begin_split(inputclass, mapArgs, __ctx, true, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, 
+                                       java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                       IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    {
+        return begin_split(inputclass, mapArgs, null, false, false, __responseCb, __exceptionCb, null);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, 
+                                       java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                       IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                       IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_split(inputclass, mapArgs, null, false, false, __responseCb, __exceptionCb, __sentCb);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, 
+                                       java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                       java.util.Map<String, String> __ctx, 
+                                       IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    {
+        return begin_split(inputclass, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, null);
+    }
+
+    public Ice.AsyncResult begin_split(ClassifyB inputclass, 
+                                       java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                       java.util.Map<String, String> __ctx, 
+                                       IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                       IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                       IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_split(inputclass, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
+    }
+
+    private Ice.AsyncResult begin_split(ClassifyB inputclass, 
+                                        java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                        java.util.Map<String, String> __ctx, 
+                                        boolean __explicitCtx, 
+                                        boolean __synchronous, 
+                                        IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                        IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                        IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_split(inputclass, mapArgs, __ctx, __explicitCtx, __synchronous, 
+                           new IceInternal.Functional_TwowayCallbackArg1<String>(__responseCb, __exceptionCb, __sentCb)
+                               {
+                                   public final void __completed(Ice.AsyncResult __result)
+                                   {
+                                       InfRicePrxHelper.__split_completed(this, __result);
+                                   }
+                               });
+    }
+
+    private Ice.AsyncResult begin_split(ClassifyB inputclass, 
+                                        java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                        java.util.Map<String, String> __ctx, 
+                                        boolean __explicitCtx, 
+                                        boolean __synchronous, 
+                                        IceInternal.CallbackBase __cb)
+    {
+        __checkAsyncTwowayOnly(__split_name);
+        IceInternal.OutgoingAsync __result = getOutgoingAsync(__split_name, __cb);
+        try
+        {
+            __result.prepare(__split_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
+            IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
+            ClassifyB.__write(__os, inputclass);
+            DirArgsHelper.write(__os, mapArgs);
+            __result.endWriteParams();
+            __result.invoke();
+        }
+        catch(Ice.Exception __ex)
+        {
+            __result.abort(__ex);
+        }
+        return __result;
+    }
+
+    public String end_split(Ice.AsyncResult __iresult)
+    {
+        IceInternal.OutgoingAsync __result = IceInternal.OutgoingAsync.check(__iresult, this, __split_name);
+        try
+        {
+            if(!__result.__wait())
+            {
+                try
+                {
+                    __result.throwUserException();
+                }
+                catch(Ice.UserException __ex)
+                {
+                    throw new Ice.UnknownUserException(__ex.ice_name(), __ex);
+                }
+            }
+            IceInternal.BasicStream __is = __result.startReadParams();
+            String __ret;
+            __ret = __is.readString();
+            __result.endReadParams();
+            return __ret;
+        }
+        finally
+        {
+            if(__result != null)
+            {
+                __result.cacheMessageBuffers();
+            }
+        }
+    }
+
+    static public void __split_completed(Ice.TwowayCallbackArg1<String> __cb, Ice.AsyncResult __result)
+    {
+        RPCRice.InfRicePrx __proxy = (RPCRice.InfRicePrx)__result.getProxy();
+        String __ret = null;
+        try
+        {
+            __ret = __proxy.end_split(__result);
         }
         catch(Ice.LocalException __ex)
         {
