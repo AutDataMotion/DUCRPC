@@ -25,186 +25,6 @@ package RPCRice;
  **/
 public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements InfRicePrx
 {
-    private static final String __GrowthMonitor_name = "GrowthMonitor";
-
-    public String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs)
-    {
-        return GrowthMonitor(inputGrowth, mapArgs, null, false);
-    }
-
-    public String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
-    {
-        return GrowthMonitor(inputGrowth, mapArgs, __ctx, true);
-    }
-
-    private String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, boolean __explicitCtx)
-    {
-        __checkTwowayOnly(__GrowthMonitor_name);
-        return end_GrowthMonitor(begin_GrowthMonitor(inputGrowth, mapArgs, __ctx, __explicitCtx, true, null));
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, null, false, false, null);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, __ctx, true, false, null);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Callback __cb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, null, false, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Ice.Callback __cb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, __ctx, true, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Callback_InfRice_GrowthMonitor __cb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, null, false, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Callback_InfRice_GrowthMonitor __cb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, __ctx, true, false, __cb);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, null, false, false, __responseCb, __exceptionCb, null);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                               IceInternal.Functional_BoolCallback __sentCb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, null, false, false, __responseCb, __exceptionCb, __sentCb);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               java.util.Map<String, String> __ctx, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, null);
-    }
-
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               java.util.Map<String, String> __ctx, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                               IceInternal.Functional_BoolCallback __sentCb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
-    }
-
-    private Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                                java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                                java.util.Map<String, String> __ctx, 
-                                                boolean __explicitCtx, 
-                                                boolean __synchronous, 
-                                                IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                                IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                                IceInternal.Functional_BoolCallback __sentCb)
-    {
-        return begin_GrowthMonitor(inputGrowth, mapArgs, __ctx, __explicitCtx, __synchronous, 
-                                   new IceInternal.Functional_TwowayCallbackArg1<String>(__responseCb, __exceptionCb, __sentCb)
-                                       {
-                                           public final void __completed(Ice.AsyncResult __result)
-                                           {
-                                               InfRicePrxHelper.__GrowthMonitor_completed(this, __result);
-                                           }
-                                       });
-    }
-
-    private Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                                java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                                java.util.Map<String, String> __ctx, 
-                                                boolean __explicitCtx, 
-                                                boolean __synchronous, 
-                                                IceInternal.CallbackBase __cb)
-    {
-        __checkAsyncTwowayOnly(__GrowthMonitor_name);
-        IceInternal.OutgoingAsync __result = getOutgoingAsync(__GrowthMonitor_name, __cb);
-        try
-        {
-            __result.prepare(__GrowthMonitor_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
-            IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
-            Growth.__write(__os, inputGrowth);
-            DirArgsHelper.write(__os, mapArgs);
-            __result.endWriteParams();
-            __result.invoke();
-        }
-        catch(Ice.Exception __ex)
-        {
-            __result.abort(__ex);
-        }
-        return __result;
-    }
-
-    public String end_GrowthMonitor(Ice.AsyncResult __iresult)
-    {
-        IceInternal.OutgoingAsync __result = IceInternal.OutgoingAsync.check(__iresult, this, __GrowthMonitor_name);
-        try
-        {
-            if(!__result.__wait())
-            {
-                try
-                {
-                    __result.throwUserException();
-                }
-                catch(Ice.UserException __ex)
-                {
-                    throw new Ice.UnknownUserException(__ex.ice_name(), __ex);
-                }
-            }
-            IceInternal.BasicStream __is = __result.startReadParams();
-            String __ret;
-            __ret = __is.readString();
-            __result.endReadParams();
-            return __ret;
-        }
-        finally
-        {
-            if(__result != null)
-            {
-                __result.cacheMessageBuffers();
-            }
-        }
-    }
-
-    static public void __GrowthMonitor_completed(Ice.TwowayCallbackArg1<String> __cb, Ice.AsyncResult __result)
-    {
-        RPCRice.InfRicePrx __proxy = (RPCRice.InfRicePrx)__result.getProxy();
-        String __ret = null;
-        try
-        {
-            __ret = __proxy.end_GrowthMonitor(__result);
-        }
-        catch(Ice.LocalException __ex)
-        {
-            __cb.exception(__ex);
-            return;
-        }
-        catch(Ice.SystemException __ex)
-        {
-            __cb.exception(__ex);
-            return;
-        }
-        __cb.response(__ret);
-    }
-
     private static final String __PreProcessing_name = "PreProcessing";
 
     public String PreProcessing(PreProcess inputfile, java.util.Map<java.lang.String, java.lang.String> mapArgs)
@@ -911,6 +731,186 @@ public final class InfRicePrxHelper extends Ice.ObjectPrxHelperBase implements I
         try
         {
             __ret = __proxy.end_maxlikehood(__result);
+        }
+        catch(Ice.LocalException __ex)
+        {
+            __cb.exception(__ex);
+            return;
+        }
+        catch(Ice.SystemException __ex)
+        {
+            __cb.exception(__ex);
+            return;
+        }
+        __cb.response(__ret);
+    }
+
+    private static final String __ricegrowth_name = "ricegrowth";
+
+    public String ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    {
+        return ricegrowth(inputGrowth, mapArgs, null, false);
+    }
+
+    public String ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
+    {
+        return ricegrowth(inputGrowth, mapArgs, __ctx, true);
+    }
+
+    private String ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, boolean __explicitCtx)
+    {
+        __checkTwowayOnly(__ricegrowth_name);
+        return end_ricegrowth(begin_ricegrowth(inputGrowth, mapArgs, __ctx, __explicitCtx, true, null));
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, null, false, false, null);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, __ctx, true, false, null);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Callback __cb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, null, false, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Ice.Callback __cb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, __ctx, true, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Callback_InfRice_ricegrowth __cb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, null, false, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Callback_InfRice_ricegrowth __cb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, __ctx, true, false, __cb);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, null, false, false, __responseCb, __exceptionCb, null);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                            IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, null, false, false, __responseCb, __exceptionCb, __sentCb);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            java.util.Map<String, String> __ctx, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, null);
+    }
+
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            java.util.Map<String, String> __ctx, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                            IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, __ctx, true, false, __responseCb, __exceptionCb, __sentCb);
+    }
+
+    private Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                             java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                             java.util.Map<String, String> __ctx, 
+                                             boolean __explicitCtx, 
+                                             boolean __synchronous, 
+                                             IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                             IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                             IceInternal.Functional_BoolCallback __sentCb)
+    {
+        return begin_ricegrowth(inputGrowth, mapArgs, __ctx, __explicitCtx, __synchronous, 
+                                new IceInternal.Functional_TwowayCallbackArg1<String>(__responseCb, __exceptionCb, __sentCb)
+                                    {
+                                        public final void __completed(Ice.AsyncResult __result)
+                                        {
+                                            InfRicePrxHelper.__ricegrowth_completed(this, __result);
+                                        }
+                                    });
+    }
+
+    private Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                             java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                             java.util.Map<String, String> __ctx, 
+                                             boolean __explicitCtx, 
+                                             boolean __synchronous, 
+                                             IceInternal.CallbackBase __cb)
+    {
+        __checkAsyncTwowayOnly(__ricegrowth_name);
+        IceInternal.OutgoingAsync __result = getOutgoingAsync(__ricegrowth_name, __cb);
+        try
+        {
+            __result.prepare(__ricegrowth_name, Ice.OperationMode.Normal, __ctx, __explicitCtx, __synchronous);
+            IceInternal.BasicStream __os = __result.startWriteParams(Ice.FormatType.DefaultFormat);
+            Growth.__write(__os, inputGrowth);
+            DirArgsHelper.write(__os, mapArgs);
+            __result.endWriteParams();
+            __result.invoke();
+        }
+        catch(Ice.Exception __ex)
+        {
+            __result.abort(__ex);
+        }
+        return __result;
+    }
+
+    public String end_ricegrowth(Ice.AsyncResult __iresult)
+    {
+        IceInternal.OutgoingAsync __result = IceInternal.OutgoingAsync.check(__iresult, this, __ricegrowth_name);
+        try
+        {
+            if(!__result.__wait())
+            {
+                try
+                {
+                    __result.throwUserException();
+                }
+                catch(Ice.UserException __ex)
+                {
+                    throw new Ice.UnknownUserException(__ex.ice_name(), __ex);
+                }
+            }
+            IceInternal.BasicStream __is = __result.startReadParams();
+            String __ret;
+            __ret = __is.readString();
+            __result.endReadParams();
+            return __ret;
+        }
+        finally
+        {
+            if(__result != null)
+            {
+                __result.cacheMessageBuffers();
+            }
+        }
+    }
+
+    static public void __ricegrowth_completed(Ice.TwowayCallbackArg1<String> __cb, Ice.AsyncResult __result)
+    {
+        RPCRice.InfRicePrx __proxy = (RPCRice.InfRicePrx)__result.getProxy();
+        String __ret = null;
+        try
+        {
+            __ret = __proxy.end_ricegrowth(__result);
         }
         catch(Ice.LocalException __ex)
         {

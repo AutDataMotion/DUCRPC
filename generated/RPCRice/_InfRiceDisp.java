@@ -70,11 +70,6 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
         return __ids[1];
     }
 
-    public final String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs)
-    {
-        return GrowthMonitor(inputGrowth, mapArgs, null);
-    }
-
     public final String PreProcessing(PreProcess inputfile, java.util.Map<java.lang.String, java.lang.String> mapArgs)
     {
         return PreProcessing(inputfile, mapArgs, null);
@@ -93,6 +88,11 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
     public final String maxlikehood(ClassifyA inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
     {
         return maxlikehood(inputclass, mapArgs, null);
+    }
+
+    public final String ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs)
+    {
+        return ricegrowth(inputGrowth, mapArgs, null);
     }
 
     public final String split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs)
@@ -148,7 +148,7 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
         return Ice.DispatchStatus.DispatchOK;
     }
 
-    public static Ice.DispatchStatus ___GrowthMonitor(InfRice __obj, IceInternal.Incoming __inS, Ice.Current __current)
+    public static Ice.DispatchStatus ___ricegrowth(InfRice __obj, IceInternal.Incoming __inS, Ice.Current __current)
     {
         __checkMode(Ice.OperationMode.Normal, __current.mode);
         IceInternal.BasicStream __is = __inS.startReadParams();
@@ -157,7 +157,7 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
         inputGrowth = Growth.__read(__is, inputGrowth);
         mapArgs = DirArgsHelper.read(__is);
         __inS.endReadParams();
-        String __ret = __obj.GrowthMonitor(inputGrowth, mapArgs, __current);
+        String __ret = __obj.ricegrowth(inputGrowth, mapArgs, __current);
         IceInternal.BasicStream __os = __inS.__startWriteParams(Ice.FormatType.DefaultFormat);
         __os.writeString(__ret);
         __inS.__endWriteParams(true);
@@ -198,7 +198,6 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
 
     private final static String[] __all =
     {
-        "GrowthMonitor",
         "PreProcessing",
         "ice_id",
         "ice_ids",
@@ -207,6 +206,7 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
         "landdrought",
         "landyield",
         "maxlikehood",
+        "ricegrowth",
         "split"
     };
 
@@ -222,39 +222,39 @@ public abstract class _InfRiceDisp extends Ice.ObjectImpl implements InfRice
         {
             case 0:
             {
-                return ___GrowthMonitor(this, in, __current);
+                return ___PreProcessing(this, in, __current);
             }
             case 1:
             {
-                return ___PreProcessing(this, in, __current);
+                return ___ice_id(this, in, __current);
             }
             case 2:
             {
-                return ___ice_id(this, in, __current);
+                return ___ice_ids(this, in, __current);
             }
             case 3:
             {
-                return ___ice_ids(this, in, __current);
+                return ___ice_isA(this, in, __current);
             }
             case 4:
             {
-                return ___ice_isA(this, in, __current);
+                return ___ice_ping(this, in, __current);
             }
             case 5:
             {
-                return ___ice_ping(this, in, __current);
+                return ___landdrought(this, in, __current);
             }
             case 6:
             {
-                return ___landdrought(this, in, __current);
+                return ___landyield(this, in, __current);
             }
             case 7:
             {
-                return ___landyield(this, in, __current);
+                return ___maxlikehood(this, in, __current);
             }
             case 8:
             {
-                return ___maxlikehood(this, in, __current);
+                return ___ricegrowth(this, in, __current);
             }
             case 9:
             {
