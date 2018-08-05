@@ -40,12 +40,12 @@ module RPCRice {
    
    struct Drought{
    		int id;	// 任务编号
-   		string fileDate;        // 文件的collect time 20170728
-   		string imageLst;        // 读库 预处理后的 在产品表 温度文件路径+名称 type 03 LST         D:\\Thailand_test\\data\\Thailand_LST_2017209.tif 
-   		string imageNdvi;       //  读库 预处理后的 在产品表  NDVI文件路径+名称  type 01 NDVI_1        D:\\Thailand_test\\data\\Thailand_NDVI_2017209.tif 
+   		string fileDate;        // 文件的collect time 2017-07-28
+   		string imageLst;        // 读库 预处理后的 在产品表 温度文件路径+名称 type 03 LST   D:\\Thailand_test\\data\\Thailand_LST_2017209.tif
+   		string imageNdvi;       //  读库 预处理后的 在产品表  NDVI文件路径+名称  type 01 NDVI_1    D:\\Thailand_test\\data\\Thailand_NDVI_2017209.tif
    		string imageLanduse;    //  写死 泰国农田栅格文件夹   D:\\Thailand_test\\landuse\\1km 
-   		string shpfilelPath;      // 写死 泰国矢量文件路径      D:\\Thailand_test\\shp 
-   		string outPath;      // 写死 干旱最终结果存放文件夹D:\\Thailand_test\\drought 
+   		string shpfilelPath;      // 写死 泰国矢量文件路径      D:\\\\Thailand_test\\\\shp 
+   		string outPath;      // 写死 干旱最终结果存放文件夹 E:\\\\thairiceproduct\\\\Drought 
    		string pathGdalwarpS;   //  写死 gdal裁剪模块文件路径  C:\\warmerda\\bld\\bin\\gdalwarp.exe 
    		float threshold1;       // 读库 参数表 阈值参数1：默认为0.2  参数表 
    		float threshold2;       //读库 参数表 阈值参数1：默认为0.4
@@ -55,11 +55,11 @@ module RPCRice {
 
       struct Growth{
    		int	id;	//任务编号
-   		string fileDate; // 从文件名 collectTime
-   		string pathNdvi; // 读库 预处理完的 tif type 02 NDVI_02 路径+文件名
+   		string fileDate; // 读库 collectTime 只取年月日
+   		string pathNdvi; // 读库 预处理完的 tif type 02 NDVI_02 路径+文件名 D:\\Thailand_test\\data\\MOD13Q120170813.tif
 		string imageLanduse;	// 写死 D:\\Thailand_test\\landuse
-		string shpfilePath;     // 写死 D:\\Thailand_test\\shp
-		string outPath;         // 写死 D:\\Thailand_test\\grouth
+		string shpfilePath;     // 写死 D:\\\\Thailand_test\\\\shp
+		string outPath;         // 写死 E:\\\\thairiceproduct\\\\Growth
 		string pathGdalwarpS;   // 写死 C:\\warmerda\\bld\\bin\\gdalwarp.exe
   		float threshold1;       // 读库 长势 阈值参数1：默认为-0.3  参数表 
    		float threshold2;       // 读库 长势 阈值参数2：默认为-0.1
@@ -70,12 +70,12 @@ module RPCRice {
       struct Yield{
     	int id;	 // 任务编号
     	string fileDate;       // 文件的 collect time  20170723
-    	string pathNdvi;	   // 读库 路径+名称 type 02 NDVI_02 t12_pre_process_inf 的filePath fileName  NDVI存储路径txt            D:\\Thailand_test\\data\\Clip_N2_2017.tif
+    	string pathNdvi;	   // 读库 路径+名称 type 02 NDVI_02 t12_pre_process_inf 的filePath fileName  NDVI存储路径txt  D:\\Thailand_test\\data\\Clip_N2_2017.tif
 		string outCode;        // imagePath的文件名读取 行政区对应编码  72 
 		string pathStatistics; // 写死 行政区农作物产量统计数据   D:\\Thailand_test\\statistic\\Suphanburd.csv 
 		string imageLanduse;   // 写死 行政区农田（250m）文件夹   D:\\Thailand_test\\landuse\\250m 
-		string outPath;    // 写死 裁剪后NDVI存放文件夹           D:\\Thailand_test\\yield 
-		string shpfilePath;        // 写死 行政区划矢量边界shp文件夹  D:\\Thailand_test\\shp\\Province 
+		string outPath;    // 写死 裁剪后NDVI存放文件夹           E:\\\\thairiceproduct\\\\Yield
+		string shpfilePath;        // 写死 行政区划矢量边界shp文件夹  D:\\\\Thailand_test\\\\shp\\\\Province 
 		string pathGdalwarpS;  // 写死 gdal裁剪模块文件路径       C:\\warmerda\\bld\\bin\\gdalwarp.exe
 	};
 
@@ -91,9 +91,9 @@ module RPCRice {
 		// 修正后面积监测按行政区分解
         string split(ClassifyB inputclass, DirArgs mapArgs); 
 
-    	// 长势监测preProcessing
-    	// 更具参数表 长势 开始年 到 结束年 预处理后的表中读fileDate该日的 type 02 的所有文件(每一年会有一个)路径+文件名
-		string GrowthMonitor(Growth inputGrowth, DirArgs mapArgs);
+    	// 长势监测preProcessing 
+		// 根据参数表 长势 开始年 到 结束年 预处理后的表中读fileDate该日的 type 02 的所有文件(每一年会有一个)路径+文件名
+		string ricegrowth(Growth inputGrowth, DirArgs mapArgs);
  
     	// 水稻估产 string pathNdvi;	   多个NDVI存储路径放在mapArgs <key, value> key:"p1" value:""
     	// 全国每个code进行遍历调用

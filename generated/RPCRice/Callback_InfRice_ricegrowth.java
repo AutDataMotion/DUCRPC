@@ -20,11 +20,11 @@
 
 package RPCRice;
 
-public abstract class Callback_InfRice_GrowthMonitor
+public abstract class Callback_InfRice_ricegrowth
     extends IceInternal.TwowayCallback implements Ice.TwowayCallbackArg1<String>
 {
     public final void __completed(Ice.AsyncResult __result)
     {
-        InfRicePrxHelper.__GrowthMonitor_completed(this, __result);
+        InfRicePrxHelper.__ricegrowth_completed(this, __result);
     }
 }

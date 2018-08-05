@@ -148,47 +148,47 @@ public interface InfRicePrx extends Ice.ObjectPrx
 
     public String end_split(Ice.AsyncResult __result);
 
-    public String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs);
+    public String ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 
-    public String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx);
+    public String ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Callback __cb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Ice.Callback __cb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Ice.Callback __cb);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Callback_InfRice_GrowthMonitor __cb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, Callback_InfRice_ricegrowth __cb);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Callback_InfRice_GrowthMonitor __cb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs, java.util.Map<String, String> __ctx, Callback_InfRice_ricegrowth __cb);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                               IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                            IceInternal.Functional_BoolCallback __sentCb);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               java.util.Map<String, String> __ctx, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            java.util.Map<String, String> __ctx, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb);
 
-    public Ice.AsyncResult begin_GrowthMonitor(Growth inputGrowth, 
-                                               java.util.Map<java.lang.String, java.lang.String> mapArgs, 
-                                               java.util.Map<String, String> __ctx, 
-                                               IceInternal.Functional_GenericCallback1<String> __responseCb, 
-                                               IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
-                                               IceInternal.Functional_BoolCallback __sentCb);
+    public Ice.AsyncResult begin_ricegrowth(Growth inputGrowth, 
+                                            java.util.Map<java.lang.String, java.lang.String> mapArgs, 
+                                            java.util.Map<String, String> __ctx, 
+                                            IceInternal.Functional_GenericCallback1<String> __responseCb, 
+                                            IceInternal.Functional_GenericCallback1<Ice.Exception> __exceptionCb, 
+                                            IceInternal.Functional_BoolCallback __sentCb);
 
-    public String end_GrowthMonitor(Ice.AsyncResult __result);
+    public String end_ricegrowth(Ice.AsyncResult __result);
 
     public String landyield(Yield inputyield, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 

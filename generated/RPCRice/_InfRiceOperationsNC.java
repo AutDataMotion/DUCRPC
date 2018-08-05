@@ -28,7 +28,7 @@ public interface _InfRiceOperationsNC
 
     String split(ClassifyB inputclass, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 
-    String GrowthMonitor(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs);
+    String ricegrowth(Growth inputGrowth, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 
     String landyield(Yield inputyield, java.util.Map<java.lang.String, java.lang.String> mapArgs);
 
