@@ -251,5 +251,32 @@ public class ThariceClient {
 		String split = genNewProxy().split(argClassifyB, mapArgs);
 		System.out.println("RPC Res split:" + split);
 	}
+	public static String Area_classifyA(ClassifyA argClassifyA,Map<String, String> mapArgs)
+	{
+		try {
+			String argClassifyA_result = genNewProxy().maxlikehood(argClassifyA, mapArgs);
+			
+			System.out.println("RPC Area_classifyA:" + argClassifyA_result);
+			return argClassifyA_result;
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			return "failure";
+		}
+		
+	}
+	public static String Area_classifyB(ClassifyB argClassifyB,Map<String, String> mapArgs)
+	{
+		try {
+			String argClassifyB_result = genNewProxy().split(argClassifyB, mapArgs);
+			System.out.println("RPC Area_classifyB:" + argClassifyB_result);
+			return argClassifyB_result;
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			return "failure";
+		}
+		
+	}
 
 }
