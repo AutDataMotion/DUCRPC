@@ -13,8 +13,8 @@ module RPCRice {
    		string h27v08;	//MODIS数据条带4 D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h27v08.006.2017218045323.hdf
   		string h28v07;	//MODIS数据条带5 D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h28v07.006.2017218050254.hdf
     	string h28v08;	//MODIS数据条带6 D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h28v08.006.2017218050332.hdf
-   		string shpfile;	//泰国全国矢量边界shp文件 D:\\drought\\shp\\Thailand.shp
-   		string outFile;	//预处理结果存放路径 D:\\Preprocess\\result
+   		string outFilePath;	//预处理结果路径 D:\\Preprocess\\result
+   		string outFileName;	//预处理结果文件名 type_date.tif
      };
 
     struct ClassifyA{

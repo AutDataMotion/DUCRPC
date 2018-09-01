@@ -131,8 +131,8 @@ public class ThariceClient {
 		argPreProcess.h27v08 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h27v08.006.2017218045323.hdf";
 		argPreProcess.h28v07 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h28v07.006.2017218050254.hdf";
 		argPreProcess.h28v08 = "D:\\data\\MODIS\\test\\LST\\MOD11A2.A2017209.h28v08.006.2017218050332.hdf";
-		argPreProcess.shpfile = "D:\\drought\\shp\\Thailand.shp";
-		argPreProcess.outFile = "D:\\Preprocess\\result";
+		argPreProcess.outFilePath = "D:\\Preprocess\\result\\";
+		argPreProcess.outFileName = "D:\\Preprocess\\result";
 
 		String resPreProcess = genNewProxy().PreProcessing(argPreProcess, mapArgs);
 		System.out.println("RPC Res PreProcessing:" + resPreProcess);

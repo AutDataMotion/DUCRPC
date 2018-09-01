@@ -38,9 +38,9 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
 
     public String h28v08;
 
-    public String shpfile;
+    public String outFilePath;
 
-    public String outFile;
+    public String outFileName;
 
     public PreProcess()
     {
@@ -51,11 +51,11 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
         h27v08 = "";
         h28v07 = "";
         h28v08 = "";
-        shpfile = "";
-        outFile = "";
+        outFilePath = "";
+        outFileName = "";
     }
 
-    public PreProcess(int id, String type, String h26v06, String h27v06, String h27v07, String h27v08, String h28v07, String h28v08, String shpfile, String outFile)
+    public PreProcess(int id, String type, String h26v06, String h27v06, String h27v07, String h27v08, String h28v07, String h28v08, String outFilePath, String outFileName)
     {
         this.id = id;
         this.type = type;
@@ -65,8 +65,8 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
         this.h27v08 = h27v08;
         this.h28v07 = h28v07;
         this.h28v08 = h28v08;
-        this.shpfile = shpfile;
-        this.outFile = outFile;
+        this.outFilePath = outFilePath;
+        this.outFileName = outFileName;
     }
 
     public boolean
@@ -137,16 +137,16 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
                     return false;
                 }
             }
-            if(shpfile != _r.shpfile)
+            if(outFilePath != _r.outFilePath)
             {
-                if(shpfile == null || _r.shpfile == null || !shpfile.equals(_r.shpfile))
+                if(outFilePath == null || _r.outFilePath == null || !outFilePath.equals(_r.outFilePath))
                 {
                     return false;
                 }
             }
-            if(outFile != _r.outFile)
+            if(outFileName != _r.outFileName)
             {
-                if(outFile == null || _r.outFile == null || !outFile.equals(_r.outFile))
+                if(outFileName == null || _r.outFileName == null || !outFileName.equals(_r.outFileName))
                 {
                     return false;
                 }
@@ -171,8 +171,8 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
         __h = IceInternal.HashUtil.hashAdd(__h, h27v08);
         __h = IceInternal.HashUtil.hashAdd(__h, h28v07);
         __h = IceInternal.HashUtil.hashAdd(__h, h28v08);
-        __h = IceInternal.HashUtil.hashAdd(__h, shpfile);
-        __h = IceInternal.HashUtil.hashAdd(__h, outFile);
+        __h = IceInternal.HashUtil.hashAdd(__h, outFilePath);
+        __h = IceInternal.HashUtil.hashAdd(__h, outFileName);
         return __h;
     }
 
@@ -202,8 +202,8 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
         __os.writeString(h27v08);
         __os.writeString(h28v07);
         __os.writeString(h28v08);
-        __os.writeString(shpfile);
-        __os.writeString(outFile);
+        __os.writeString(outFilePath);
+        __os.writeString(outFileName);
     }
 
     public void
@@ -217,8 +217,8 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
         h27v08 = __is.readString();
         h28v07 = __is.readString();
         h28v08 = __is.readString();
-        shpfile = __is.readString();
-        outFile = __is.readString();
+        outFilePath = __is.readString();
+        outFileName = __is.readString();
     }
 
     static public void
@@ -247,5 +247,7 @@ public class PreProcess implements java.lang.Cloneable, java.io.Serializable
     
     private static final PreProcess __nullMarshalValue = new PreProcess();
 
+
     public static final long serialVersionUID = -1633129366L;
+
 }
