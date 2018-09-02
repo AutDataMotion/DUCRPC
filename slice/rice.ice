@@ -40,6 +40,7 @@ module RPCRice {
    
    struct Drought{
    		int id;	// 任务编号
+   		int idndvi; // ndvi id
    		string fileDate;        // 文件的collect time 2017-07-28
    		string imageLst;        // 读库 预处理后的 在产品表 温度文件路径+名称 type 03 LST   D:\\Thailand_test\\data\\Thailand_LST_2017209.tif
    		string imageNdvi;       //  读库 预处理后的 在产品表  NDVI文件路径+名称  type 01 NDVI_1    D:\\Thailand_test\\data\\Thailand_NDVI_2017209.tif

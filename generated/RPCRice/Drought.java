@@ -24,6 +24,8 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
 {
     public int id;
 
+    public int idndvi;
+
     public String fileDate;
 
     public String imageLst;
@@ -57,9 +59,10 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         pathGdalwarpS = "";
     }
 
-    public Drought(int id, String fileDate, String imageLst, String imageNdvi, String imageLanduse, String shpfilelPath, String outPath, String pathGdalwarpS, float threshold1, float threshold2, float threshold3, float threshold4)
+    public Drought(int id, int idndvi, String fileDate, String imageLst, String imageNdvi, String imageLanduse, String shpfilelPath, String outPath, String pathGdalwarpS, float threshold1, float threshold2, float threshold3, float threshold4)
     {
         this.id = id;
+        this.idndvi = idndvi;
         this.fileDate = fileDate;
         this.imageLst = imageLst;
         this.imageNdvi = imageNdvi;
@@ -89,6 +92,10 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         if(_r != null)
         {
             if(id != _r.id)
+            {
+                return false;
+            }
+            if(idndvi != _r.idndvi)
             {
                 return false;
             }
@@ -170,6 +177,7 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
         int __h = 5381;
         __h = IceInternal.HashUtil.hashAdd(__h, "::RPCRice::Drought");
         __h = IceInternal.HashUtil.hashAdd(__h, id);
+        __h = IceInternal.HashUtil.hashAdd(__h, idndvi);
         __h = IceInternal.HashUtil.hashAdd(__h, fileDate);
         __h = IceInternal.HashUtil.hashAdd(__h, imageLst);
         __h = IceInternal.HashUtil.hashAdd(__h, imageNdvi);
@@ -203,6 +211,7 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
     __write(IceInternal.BasicStream __os)
     {
         __os.writeInt(id);
+        __os.writeInt(idndvi);
         __os.writeString(fileDate);
         __os.writeString(imageLst);
         __os.writeString(imageNdvi);
@@ -220,6 +229,7 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
     __read(IceInternal.BasicStream __is)
     {
         id = __is.readInt();
+        idndvi = __is.readInt();
         fileDate = __is.readString();
         imageLst = __is.readString();
         imageNdvi = __is.readString();
@@ -259,5 +269,5 @@ public class Drought implements java.lang.Cloneable, java.io.Serializable
     
     private static final Drought __nullMarshalValue = new Drought();
 
-    public static final long serialVersionUID = 7061280544977091757L;
+    public static final long serialVersionUID = 6286701083813389330L;
 }

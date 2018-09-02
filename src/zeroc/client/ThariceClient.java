@@ -18,12 +18,12 @@ import RPCRice.Yield;
 
 /**
  * @author zhongweng
- *
+ * thairice:default -h 10.2.29.64 -p 8888
  */
 
 public class ThariceClient {
-	public final static String serverAddr = "thairice:default -h 10.2.29.74 -p 8888";
-
+	// public final static String serverAddr = "thairice:default -h 10.2.29.74 -p 8888";
+	public final static String serverAddr = "thairice:default -h 10.2.29.64 -p 8888";
 	private static Ice.Communicator ic;
 	private static Ice.ObjectPrx base;
 

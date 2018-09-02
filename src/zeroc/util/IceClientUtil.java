@@ -43,7 +43,7 @@ public class IceClientUtil {
 	//守护线程
 	private static volatile MonitorThread monitorThread;//
 	//空闲超时时间
-	private static long idleTimeOutSeconds = 0;
+	private static long idleTimeOutSeconds = 60*60;
 	//server addr
 	//private static String iceLocator = null;
 	private static final String locatorKey = "--Ice.Default.Locator";
@@ -215,7 +215,7 @@ public class IceClientUtil {
 		public void run() {
 			while (!Thread.currentThread().isInterrupted()) {
 				try {
-					Thread.sleep(10000L);
+					Thread.sleep(60*1000L);
 					if (lastAccessTimestamp + idleTimeOutSeconds * 1000L < System.currentTimeMillis()) {
 						closeCommunicator(true);
 					}
