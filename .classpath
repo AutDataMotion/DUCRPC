@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="com.zeroc.IceBuilderPlugin.ICE_FRAMEWORK"/>
+	<classpathentry kind="lib" path="C:/ZeroC/Ice-3.6.3/lib/ice-3.6.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
